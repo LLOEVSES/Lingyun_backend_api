@@ -1,16 +1,16 @@
 class V1::EventsController < ApplicationController
-    #before_action :authenticate_customer!, except: [:index]
+    before_action :authenticate_worker!#, except: [:index]
 
     def index
-      # if worker_signed_in?
-      #   events = Event.all
-      #   render json: events
-      # elsif customer_signed_in?
-      #   render json: "You have no authority" , status: 401
-      # else
-      #   render json: "Please sign_in"
-      # end
+      if worker_signed_in?
+        events = Event.all
+        render json: events
+      elsif customer_signed_in?
+        render json: "You have no authority" , status: 401
+      else
         render json: "Please sign_in"
+      end
+        #render json: "Please sign_in"
     end
 
     def show
