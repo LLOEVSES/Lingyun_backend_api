@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   #   resources :customers
   # end
   scope defaults: { format: 'json' } do
-      scope module: :v1 , constraints: { subdomain: 'api' } do#, constraints: ApiVersion.new('v1', true) do
+      scope module: :v1 do#, constraints: { subdomain: 'api' } do#, constraints: ApiVersion.new('v1', true) do
           resources :customers
           resources :events
           resources :workers
