@@ -1,9 +1,7 @@
 require 'api_version'
 
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'Customer', at: 'customer_auth'， controllers: {
-    sessions: 'v1/overrides/sessions'
-  }
+  mount_devise_token_auth_for 'Customer', at: 'customer_auth'
   mount_devise_token_auth_for 'Worker', at: 'worker_auth'
 
 

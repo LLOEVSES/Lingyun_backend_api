@@ -1,16 +1,16 @@
 class V1::WorkersController < ApplicationController
-
+    before_action :authenticate_worker!
     def index
-      if worker_signed_in?
-        render json: current_worker
-      else
-        redirect_to '/workers/sign_in', render: 401
-      end
+      # if worker_signed_in?
+         render json: "current_worker"
+      # else
+      #   redirect_to '/workers/sign_in', render: 401
+
     end
 
     def show
       worker = Worker.find(params[:id])
-      render json: worker
+      render json: "ii"
     end
 
     def destroy
