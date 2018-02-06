@@ -708,3 +708,294 @@ Processing by V1::Overrides::TokenValidationController#validate_token as */*
 Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/customer_auth/sign_in" for 127.0.0.1 at 2018-02-06 13:39:45 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#new as */*
+Completed 405 Method Not Allowed in 323ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 13:40:44 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+Completed 401 Unauthorized in 27ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 13:40:47 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 13:40:56 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (14.9ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"expiry\":1519152057}}"], ["updated_at", "2018-02-06 18:40:57.227721"], ["id", 1]]
+  [1m[35m (47.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 2], ["current_sign_in_at", "2018-02-06 18:40:57.291808"], ["updated_at", "2018-02-06 18:40:57.295817"], ["id", 1]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.3ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"}}"], ["updated_at", "2018-02-06 18:40:57.502364"], ["id", 1]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 970ms (Views: 1.0ms | ActiveRecord: 127.4ms)
+
+
+Started GET "/workers" for 127.0.0.1 at 2018-02-06 13:41:12 -0500
+  
+SyntaxError (C:/Sites/backend_api/app/controllers/v1/workers_controller.rb:19: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/v1/workers_controller.rb:19: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/workers" for 127.0.0.1 at 2018-02-06 13:41:33 -0500
+Processing by V1::WorkersController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 13:52:26 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"expiry\":1519152747}}"], ["updated_at", "2018-02-06 18:52:27.442630"], ["id", 1]]
+  [1m[35m (32.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 3], ["current_sign_in_at", "2018-02-06 18:52:27.513902"], ["last_sign_in_at", "2018-02-06 18:40:57.291808"], ["updated_at", "2018-02-06 18:52:27.522875"], ["id", 1]]
+  [1m[35m (38.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.1ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"}}"], ["updated_at", "2018-02-06 18:52:27.754460"], ["id", 1]]
+  [1m[35m (35.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 920ms (Views: 1.0ms | ActiveRecord: 148.5ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 13:57:25 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"expiry\":1519153046}}"], ["updated_at", "2018-02-06 18:57:26.051761"], ["id", 1]]
+  [1m[35m (29.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 4], ["current_sign_in_at", "2018-02-06 18:57:26.122947"], ["last_sign_in_at", "2018-02-06 18:52:27.513902"], ["updated_at", "2018-02-06 18:57:26.134978"], ["id", 1]]
+  [1m[35m (44.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"}}"], ["updated_at", "2018-02-06 18:57:26.327488"], ["id", 1]]
+  [1m[35m (26.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 808ms (Views: 0.6ms | ActiveRecord: 122.5ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 14:01:17 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"expiry\":1519153278}}"], ["updated_at", "2018-02-06 19:01:18.770995"], ["id", 1]]
+  [1m[35m (30.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 5], ["current_sign_in_at", "2018-02-06 19:01:18.833161"], ["last_sign_in_at", "2018-02-06 18:57:26.122947"], ["updated_at", "2018-02-06 19:01:18.844193"], ["id", 1]]
+  [1m[35m (38.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"}}"], ["updated_at", "2018-02-06 19:01:19.070796"], ["id", 1]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1036ms (Views: 1.1ms | ActiveRecord: 113.6ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 14:01:51 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.2ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"expiry\":1519153312}}"], ["updated_at", "2018-02-06 19:01:52.446273"], ["id", 1]]
+  [1m[35m (31.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 6], ["current_sign_in_at", "2018-02-06 19:01:52.531498"], ["last_sign_in_at", "2018-02-06 19:01:18.833161"], ["updated_at", "2018-02-06 19:01:52.542530"], ["id", 1]]
+  [1m[35m (36.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.1ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"}}"], ["updated_at", "2018-02-06 19:01:52.777152"], ["id", 1]]
+  [1m[35m (34.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 989ms (Views: 0.9ms | ActiveRecord: 142.6ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 14:02:20 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.9ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.7ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"},\"AycN_7BFTpPw6se5SQknDg\":{\"token\":\"$2a$10$KMmHoIGRTganiXObwnvjs.3vey//lSnPZmr1oGB/EwR9.msR7ZJai\",\"expiry\":1519153340}}"], ["updated_at", "2018-02-06 19:02:20.779694"], ["id", 1]]
+  [1m[35m (39.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 7], ["current_sign_in_at", "2018-02-06 19:02:20.867936"], ["last_sign_in_at", "2018-02-06 19:01:52.531498"], ["updated_at", "2018-02-06 19:02:20.875950"], ["id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.1ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (17.2ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"},\"AycN_7BFTpPw6se5SQknDg\":{\"token\":\"$2a$10$LnPsQ.zS.zTfag2/xvTSROxouzLNr9Pamp8rl6L/oUCiq2KC4roKW\",\"expiry\":1519153341,\"last_token\":\"$2a$10$KMmHoIGRTganiXObwnvjs.3vey//lSnPZmr1oGB/EwR9.msR7ZJai\",\"updated_at\":\"2018-02-06T14:02:21.106-05:00\"}}"], ["updated_at", "2018-02-06 19:02:21.110574"], ["id", 1]]
+  [1m[35m (48.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 965ms (Views: 0.9ms | ActiveRecord: 149.2ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 14:02:54 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.3ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"},\"AycN_7BFTpPw6se5SQknDg\":{\"token\":\"$2a$10$LnPsQ.zS.zTfag2/xvTSROxouzLNr9Pamp8rl6L/oUCiq2KC4roKW\",\"expiry\":1519153341,\"last_token\":\"$2a$10$KMmHoIGRTganiXObwnvjs.3vey//lSnPZmr1oGB/EwR9.msR7ZJai\",\"updated_at\":\"2018-02-06T14:02:21.106-05:00\"},\"-9cIHDyuy2zqAstfOz5IwA\":{\"token\":\"$2a$10$e21mYv7DbkxHySSbrtG.peLN3lMXfqA52Bnipb4xw6xa0BfYa.Odu\",\"expiry\":1519153375}}"], ["updated_at", "2018-02-06 19:02:55.456086"], ["id", 1]]
+  [1m[35m (27.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 8], ["current_sign_in_at", "2018-02-06 19:02:55.535301"], ["last_sign_in_at", "2018-02-06 19:02:20.867936"], ["updated_at", "2018-02-06 19:02:55.563338"], ["id", 1]]
+  [1m[35m (21.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"},\"AycN_7BFTpPw6se5SQknDg\":{\"token\":\"$2a$10$LnPsQ.zS.zTfag2/xvTSROxouzLNr9Pamp8rl6L/oUCiq2KC4roKW\",\"expiry\":1519153341,\"last_token\":\"$2a$10$KMmHoIGRTganiXObwnvjs.3vey//lSnPZmr1oGB/EwR9.msR7ZJai\",\"updated_at\":\"2018-02-06T14:02:21.106-05:00\"},\"-9cIHDyuy2zqAstfOz5IwA\":{\"token\":\"$2a$10$3bYmzRJRkmM8fmfGWJrPlOhP7pViDLykQgxY2KdRXeT0ZWWKSqjla\",\"expiry\":1519153375,\"last_token\":\"$2a$10$e21mYv7DbkxHySSbrtG.peLN3lMXfqA52Bnipb4xw6xa0BfYa.Odu\",\"updated_at\":\"2018-02-06T14:02:55.816-05:00\"}}"], ["updated_at", "2018-02-06 19:02:55.818016"], ["id", 1]]
+  [1m[35m (31.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 847ms (Views: 1.2ms | ActiveRecord: 112.9ms)
+
+
+Started GET "/workers" for 127.0.0.1 at 2018-02-06 14:03:10 -0500
+Processing by V1::WorkersController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers" for 127.0.0.1 at 2018-02-06 14:03:54 -0500
+Processing by V1::WorkersController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workers" for 127.0.0.1 at 2018-02-06 14:04:53 -0500
+Processing by V1::WorkersController#index as JSON
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:09:04 -0500
+Processing by V1::EventsController#index as JSON
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `authenticate_worker' for #<V1::EventsController:0x76ee4f0>
+Did you mean?  authenticate_worker!):
+  
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:09:40 -0500
+Processing by V1::EventsController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:10:11 -0500
+Processing by V1::EventsController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:11:03 -0500
+Processing by V1::EventsController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-06 14:11:57 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (16.2ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"},\"AycN_7BFTpPw6se5SQknDg\":{\"token\":\"$2a$10$LnPsQ.zS.zTfag2/xvTSROxouzLNr9Pamp8rl6L/oUCiq2KC4roKW\",\"expiry\":1519153341,\"last_token\":\"$2a$10$KMmHoIGRTganiXObwnvjs.3vey//lSnPZmr1oGB/EwR9.msR7ZJai\",\"updated_at\":\"2018-02-06T14:02:21.106-05:00\"},\"-9cIHDyuy2zqAstfOz5IwA\":{\"token\":\"$2a$10$3bYmzRJRkmM8fmfGWJrPlOhP7pViDLykQgxY2KdRXeT0ZWWKSqjla\",\"expiry\":1519153375,\"last_token\":\"$2a$10$e21mYv7DbkxHySSbrtG.peLN3lMXfqA52Bnipb4xw6xa0BfYa.Odu\",\"updated_at\":\"2018-02-06T14:02:55.816-05:00\"},\"LfIJZjkbhh4CwBdpARVA_Q\":{\"token\":\"$2a$10$Db4VxyqhC8CyoSKI0JACsODj6/mNfZRNMf5c6J6eYthFuEG5Ue3km\",\"expiry\":1519153918}}"], ["updated_at", "2018-02-06 19:11:58.477893"], ["id", 1]]
+  [1m[35m (40.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 9], ["current_sign_in_at", "2018-02-06 19:11:58.549012"], ["last_sign_in_at", "2018-02-06 19:02:55.535301"], ["updated_at", "2018-02-06 19:11:58.562024"], ["id", 1]]
+  [1m[35m (35.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.2ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"rN2QjAGzZYS-oh3D0nJyhw\":{\"token\":\"$2a$10$T5qk0Dhm7uPVr9ty.QdO8OrQNx/gfLAJvjv2F2Dv.JNvqWRxaT5Pi\",\"expiry\":1519073012,\"last_token\":\"$2a$10$swYnpSwBkZ4upVO02X9Fi.1vkD8kDZ.oF37WdYTZkG834CQdBgWMS\",\"updated_at\":\"2018-02-05T15:43:32.826-05:00\"},\"N0kt5IZZK0IXnUnxRXoyEg\":{\"token\":\"$2a$10$JwGaz9tlCbQjJlFox1GE/.WD8kQaP6owY1eP6s9rK4kq2XgiWmY3O\",\"expiry\":1519073452,\"last_token\":\"$2a$10$zOcYuazlOq7tuGVb2CpWQecN9TY7YiUlKEjPnYqjhdtCBxs3gfATG\",\"updated_at\":\"2018-02-05T15:50:52.861-05:00\"},\"Nxd_dwJ2F2M8RDQFbX7qLA\":{\"token\":\"$2a$10$1UUQIpPmLpRvZF7DS3jUqumaE6EmGM3rjGbUZcly6b7Sf.0gl.ypm\",\"expiry\":1519152057,\"last_token\":\"$2a$10$auehK61OvH5s/rApWWgrzurRfMLcTcsgLTBaeOX2ghzuaAaU5iZqS\",\"updated_at\":\"2018-02-06T13:40:57.500-05:00\"},\"Ik-0GRRvUIRq5BP-oKHlpQ\":{\"token\":\"$2a$10$PEKPkDjwwBnPIvz9agm7P.Iq2lZ4m//3JmyIuLS2TnHpzBk2Vqg8y\",\"expiry\":1519152747,\"last_token\":\"$2a$10$54IRlUXXTbgs5vmmBRHD4emlA4Szds8x3t61XIZ1Fq1/Nx96Jr9ce\",\"updated_at\":\"2018-02-06T13:52:27.751-05:00\"},\"1wYHZ8DLgtmL_1gWsS7r6A\":{\"token\":\"$2a$10$jS9.xtM.hTgqP4hD0IDg.e/DM4Pbq2nBtg7Gceg0mzzUGC22g88ZW\",\"expiry\":1519153046,\"last_token\":\"$2a$10$AVJwiXBuWqhoVjF.Z.YCGelt.bye6pVU21qcpEAj9o6SLkWQwmxAK\",\"updated_at\":\"2018-02-06T13:57:26.325-05:00\"},\"ldGMtESSlzLZLnQMIqPkXw\":{\"token\":\"$2a$10$egZDdpf66hu0OZgKIsgK3OWpPQ6FbZQMcF0Fa4LXtS5Mq3GWyN4Pu\",\"expiry\":1519153279,\"last_token\":\"$2a$10$xdknQ5gZqABgDv0fduOwDe4POyEKmW.qTrkGYCOD3LrexVoExsyia\",\"updated_at\":\"2018-02-06T14:01:19.068-05:00\"},\"HBwSdfLEJ56cQuHEPgXoZw\":{\"token\":\"$2a$10$ebUbbNtRxCjKXa9XUKfkKee2nSsiqkDVz61hT50gHEQnU8uZzUEUK\",\"expiry\":1519153312,\"last_token\":\"$2a$10$FKQUht8qaa6FwDrnxzznCOHshMk9CdDJNWUqVsabH6vWzS0A6S/c.\",\"updated_at\":\"2018-02-06T14:01:52.774-05:00\"},\"AycN_7BFTpPw6se5SQknDg\":{\"token\":\"$2a$10$LnPsQ.zS.zTfag2/xvTSROxouzLNr9Pamp8rl6L/oUCiq2KC4roKW\",\"expiry\":1519153341,\"last_token\":\"$2a$10$KMmHoIGRTganiXObwnvjs.3vey//lSnPZmr1oGB/EwR9.msR7ZJai\",\"updated_at\":\"2018-02-06T14:02:21.106-05:00\"},\"-9cIHDyuy2zqAstfOz5IwA\":{\"token\":\"$2a$10$3bYmzRJRkmM8fmfGWJrPlOhP7pViDLykQgxY2KdRXeT0ZWWKSqjla\",\"expiry\":1519153375,\"last_token\":\"$2a$10$e21mYv7DbkxHySSbrtG.peLN3lMXfqA52Bnipb4xw6xa0BfYa.Odu\",\"updated_at\":\"2018-02-06T14:02:55.816-05:00\"},\"LfIJZjkbhh4CwBdpARVA_Q\":{\"token\":\"$2a$10$qatE5Y4X2BO3A4K.DATps.BU42cFoHobAzsfAROph4zamIoIMzlda\",\"expiry\":1519153918,\"last_token\":\"$2a$10$Db4VxyqhC8CyoSKI0JACsODj6/mNfZRNMf5c6J6eYthFuEG5Ue3km\",\"updated_at\":\"2018-02-06T14:11:58.779-05:00\"}}"], ["updated_at", "2018-02-06 19:11:58.782653"], ["id", 1]]
+  [1m[35m (27.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 915ms (Views: 1.6ms | ActiveRecord: 146.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:12:19 -0500
+Processing by V1::EventsController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:12:24 -0500
+Processing by V1::EventsController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:12:37 -0500
+Processing by V1::EventsController#index as JSON
+Filter chain halted as :authenticate_worker! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-02-06 14:42:33 -0500
+Processing by V1::EventsController#index as JSON
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 67ms (Views: 5.1ms | ActiveRecord: 1.5ms)
+
+

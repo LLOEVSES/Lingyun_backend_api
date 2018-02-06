@@ -1,5 +1,5 @@
 class V1::EventsController < ApplicationController
-    before_action :authenticate_worker!#, except: [:index]
+    #before_action :authenticate_worker!#, except: [:index]
 
     def index
         events = Event.all
