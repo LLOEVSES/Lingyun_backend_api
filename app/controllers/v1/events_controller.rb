@@ -3,8 +3,8 @@ class V1::EventsController < ApplicationController
 
     def index
         events = Event.all
+        #render json: current_worker
         render json: events
-        #render json: "Please sign_in"
     end
 
     def show
