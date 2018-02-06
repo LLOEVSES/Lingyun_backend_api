@@ -999,3 +999,336 @@ Processing by V1::EventsController#index as JSON
 Completed 200 OK in 67ms (Views: 5.1ms | ActiveRecord: 1.5ms)
 
 
+Started POST "/customers" for 127.0.0.1 at 2018-02-06 15:06:25 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant V1::CustomersController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/customers_events" for 127.0.0.1 at 2018-02-06 15:07:41 -0500
+Started GET "/customers_events" for 127.0.0.1 at 2018-02-06 15:07:51 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/customers_events"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/customers_events"):
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/customer_events" for 127.0.0.1 at 2018-02-06 15:08:42 -0500
+  
+ActionController::RoutingError (undefined method `authenticate_customer!' for V1::CustomerEventsController:Class):
+  
+app/controllers/v1/customer_events_controller.rb:2:in `<class:CustomerEventsController>'
+app/controllers/v1/customer_events_controller.rb:1:in `<top (required)>'
+Started GET "/customer_events" for 127.0.0.1 at 2018-02-06 15:09:25 -0500
+Processing by V1::CustomerEventsController#index as JSON
+Filter chain halted as :authenticate_customer! rendered or redirected
+Completed 401 Unauthorized in 141ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customer_auth/sign_in" for 127.0.0.1 at 2018-02-06 15:19:02 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"expiry\":1519157943}}"], ["updated_at", "2018-02-06 20:19:03.693060"], ["id", 1]]
+  [1m[35m (33.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-02-06 20:19:03.744194"], ["last_sign_in_at", "2018-02-06 20:19:03.744194"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-02-06 20:19:03.748205"], ["id", 1]]
+  [1m[35m (31.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (19.2ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"}}"], ["updated_at", "2018-02-06 20:19:03.970794"], ["id", 1]]
+  [1m[35m (29.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1019ms (Views: 0.6ms | ActiveRecord: 125.2ms)
+
+
+Started POST "/customer_auth/sign_in" for 127.0.0.1 at 2018-02-06 15:19:17 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"},\"Rd61jpgA0u8_NUdJB7tHnQ\":{\"token\":\"$2a$10$txSQp/hbHw8fPvrj.D1ngu9YfjMnuGWR2DFILckEXH4Ef9kcBkwf2\",\"expiry\":1519157958}}"], ["updated_at", "2018-02-06 20:19:18.294384"], ["id", 1]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 2], ["current_sign_in_at", "2018-02-06 20:19:18.352524"], ["updated_at", "2018-02-06 20:19:18.357330"], ["id", 1]]
+  [1m[35m (28.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (21.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"},\"Rd61jpgA0u8_NUdJB7tHnQ\":{\"token\":\"$2a$10$Y3q3EJ4kXrtV9qc700jHI.EZlBuSEwuE.rSqEU7b1wTvK/ZECJApK\",\"expiry\":1519157958,\"last_token\":\"$2a$10$txSQp/hbHw8fPvrj.D1ngu9YfjMnuGWR2DFILckEXH4Ef9kcBkwf2\",\"updated_at\":\"2018-02-06T15:19:18.567-05:00\"}}"], ["updated_at", "2018-02-06 20:19:18.569281"], ["id", 1]]
+  [1m[35m (31.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 817ms (Views: 0.5ms | ActiveRecord: 133.3ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2018-02-06 15:19:22 -0500
+Processing by V1::CustomersController#index as JSON
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 468ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial v1/customers/_customer with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Sites/backend_api/app/views"
+  * "C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views"
+  * "C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views"
+):
+  
+app/controllers/v1/customers_controller.rb:5:in `index'
+Started GET "/customers" for 127.0.0.1 at 2018-02-06 15:20:05 -0500
+Processing by V1::CustomersController#index as JSON
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"},\"Rd61jpgA0u8_NUdJB7tHnQ\":{\"token\":\"$2a$10$TsNFKf3bYs/asWMS4QIXh.iQwMxAv1T0dpRgP6DUDjHvxRF/3VMe6\",\"expiry\":1519158006,\"last_token\":\"$2a$10$Y3q3EJ4kXrtV9qc700jHI.EZlBuSEwuE.rSqEU7b1wTvK/ZECJApK\",\"updated_at\":\"2018-02-06T15:20:06.564-05:00\"}}"], ["updated_at", "2018-02-06 20:20:06.566042"], ["id", 1]]
+  [1m[35m (31.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 411ms (Views: 2.3ms | ActiveRecord: 49.1ms)
+
+
+  [1m[36mWorker Load (0.5ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/worker_auth" for 127.0.0.1 at 2018-02-06 15:21:36 -0500
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "workers" WHERE "workers"."email" = ? LIMIT ?[0m  [["email", "worker2@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "workers" WHERE "workers"."provider" = ? AND "workers"."email" = ?[0m  [["provider", "email"], ["email", "worker2@gmail.com"]]
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "workers" ("uid", "encrypted_password", "email", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "worker2@gmail.com"], ["encrypted_password", "$2a$11$IY/iWaZFkwLkNXV/LpEvRuF0VdeNGTAzkcnA9sJP2H6cXNr2Kj4QW"], ["email", "worker2@gmail.com"], ["tokens", "{}"], ["created_at", "2018-02-06 20:21:36.957628"], ["updated_at", "2018-02-06 20:21:36.957628"]]
+  [1m[35m (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"UZnE6aiA90-q3Sz6Ej_2cg\":{\"token\":\"$2a$10$Vb/PjHHmwouj94OWDa5iWuDZJP6C1pZxfAF6hPmzbg3VAMYttWVXK\",\"expiry\":1519158097}}"], ["updated_at", "2018-02-06 20:21:37.169303"], ["id", 2]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (20.1ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"UZnE6aiA90-q3Sz6Ej_2cg\":{\"token\":\"$2a$10$it3Ul1J3ew3TrZsNlsXXJuAsfAMDV2kkIjDlXzDwtQsOxBabJNaay\",\"expiry\":1519158097,\"last_token\":\"$2a$10$Vb/PjHHmwouj94OWDa5iWuDZJP6C1pZxfAF6hPmzbg3VAMYttWVXK\",\"updated_at\":\"2018-02-06T15:21:37.366-05:00\"}}"], ["updated_at", "2018-02-06 20:21:37.368721"], ["id", 2]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 848ms (Views: 1.3ms | ActiveRecord: 123.5ms)
+
+
+Started POST "/customer_auth" for 127.0.0.1 at 2018-02-06 15:22:02 -0500
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "customer2@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "customers" WHERE "customers"."provider" = ? AND "customers"."email" = ?[0m  [["provider", "email"], ["email", "customer2@gmail.com"]]
+  [1m[35mSQL (17.8ms)[0m  [1m[32mINSERT INTO "customers" ("uid", "encrypted_password", "email", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "customer2@gmail.com"], ["encrypted_password", "$2a$11$8jN9AF4xTddNKQaeg15gVOZcLobGpVqKGJ1oB49GwZNsUB/kMXxMy"], ["email", "customer2@gmail.com"], ["tokens", "{}"], ["created_at", "2018-02-06 20:22:03.094786"], ["updated_at", "2018-02-06 20:22:03.094786"]]
+  [1m[35m (45.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"SgPBEMOvI67yZisAxV_bRQ\":{\"token\":\"$2a$10$h6Q55KdUOjwMNiTKDQxdnOu3ZhLcRWh4tWUGCmo/Gk.9IIw0dbY/C\",\"expiry\":1519158123}}"], ["updated_at", "2018-02-06 20:22:03.375510"], ["id", 2]]
+  [1m[35m (32.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (19.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"SgPBEMOvI67yZisAxV_bRQ\":{\"token\":\"$2a$10$e9hTcRdJPerka6MO.z2eV.Bmy8U6dQywbfQxL6bht4N.D7Gi5FwWe\",\"expiry\":1519158123,\"last_token\":\"$2a$10$h6Q55KdUOjwMNiTKDQxdnOu3ZhLcRWh4tWUGCmo/Gk.9IIw0dbY/C\",\"updated_at\":\"2018-02-06T15:22:03.602-05:00\"}}"], ["updated_at", "2018-02-06 20:22:03.604041"], ["id", 2]]
+  [1m[35m (29.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 947ms (Views: 1.8ms | ActiveRecord: 164.3ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "events" ("customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["customer_id", 1], ["worker_id", 1], ["created_at", "2018-02-06 20:22:48.935264"], ["updated_at", "2018-02-06 20:22:48.935264"]]
+  [1m[35m (35.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.6ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.1ms)[0m  [1m[32mINSERT INTO "events" ("customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["customer_id", 1], ["worker_id", 1], ["created_at", "2018-02-06 20:23:20.431485"], ["updated_at", "2018-02-06 20:23:20.431485"]]
+  [1m[35m (41.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."customer_id" = ? LIMIT ?[0m  [["customer_id", 1], ["LIMIT", 11]]
+Started POST "/customer_auth/sign_in" for 127.0.0.1 at 2018-02-06 15:23:49 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"},\"Rd61jpgA0u8_NUdJB7tHnQ\":{\"token\":\"$2a$10$TsNFKf3bYs/asWMS4QIXh.iQwMxAv1T0dpRgP6DUDjHvxRF/3VMe6\",\"expiry\":1519158006,\"last_token\":\"$2a$10$Y3q3EJ4kXrtV9qc700jHI.EZlBuSEwuE.rSqEU7b1wTvK/ZECJApK\",\"updated_at\":\"2018-02-06T15:20:06.564-05:00\"},\"EKxGbnnCyhTRWJKJdEQ4dQ\":{\"token\":\"$2a$10$UNCxb/ASamAwZqqdiSGkMuGxwcGHk.tLCyz2isx43mYiQ7uFc7ZM.\",\"expiry\":1519158230}}"], ["updated_at", "2018-02-06 20:23:50.093640"], ["id", 1]]
+  [1m[35m (32.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 3], ["current_sign_in_at", "2018-02-06 20:23:50.155807"], ["last_sign_in_at", "2018-02-06 20:19:18.352524"], ["updated_at", "2018-02-06 20:23:50.161820"], ["id", 1]]
+  [1m[35m (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (18.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"},\"Rd61jpgA0u8_NUdJB7tHnQ\":{\"token\":\"$2a$10$TsNFKf3bYs/asWMS4QIXh.iQwMxAv1T0dpRgP6DUDjHvxRF/3VMe6\",\"expiry\":1519158006,\"last_token\":\"$2a$10$Y3q3EJ4kXrtV9qc700jHI.EZlBuSEwuE.rSqEU7b1wTvK/ZECJApK\",\"updated_at\":\"2018-02-06T15:20:06.564-05:00\"},\"EKxGbnnCyhTRWJKJdEQ4dQ\":{\"token\":\"$2a$10$7kjr2Z2GFnquwnLMZ9TVZu74O34e7Yl4fl5FwHgGHHjIBJRtxFV62\",\"expiry\":1519158230,\"last_token\":\"$2a$10$UNCxb/ASamAwZqqdiSGkMuGxwcGHk.tLCyz2isx43mYiQ7uFc7ZM.\",\"updated_at\":\"2018-02-06T15:23:50.388-05:00\"}}"], ["updated_at", "2018-02-06 20:23:50.390426"], ["id", 1]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1117ms (Views: 0.7ms | ActiveRecord: 124.4ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-06 15:24:03 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for V1::CustomerEventsController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/customer_events" for 127.0.0.1 at 2018-02-06 15:24:08 -0500
+Processing by V1::CustomerEventsController#index as JSON
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."customer_id" = ?[0m  [["customer_id", 1]]
+Completed 500 Internal Server Error in 7615ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial v1/events/_event with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Sites/backend_api/app/views"
+  * "C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views"
+  * "C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views"
+):
+  
+app/controllers/v1/customer_events_controller.rb:5:in `index'
+Started GET "/customer_events" for 127.0.0.1 at 2018-02-06 15:24:54 -0500
+Processing by V1::CustomerEventsController#index as JSON
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."customer_id" = ?[0m  [["customer_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (17.3ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"ZYE4iQZHT53w34CtczbvtA\":{\"token\":\"$2a$10$q0bkEO6NGLs8aIwaQRl.6e9LLCDzFp1inS2Nz4WI/DSydhDnOaOv2\",\"expiry\":1519146066,\"last_token\":\"$2a$10$b9fbvTufC5QSAIm89mN91O.kPylU64HcgFWDiVzISVzA28PmH5lbu\",\"updated_at\":\"2018-02-06T12:01:06.959-05:00\"},\"5Vnfwp9tJFgNcWtBDwd8Eg\":{\"token\":\"$2a$10$gnP3k68isnHSOWMAcc2DBeOQip3aKk.RXJrNQ6YNdfNW70ajgEo22\",\"expiry\":1519157943,\"last_token\":\"$2a$10$NywLoTY6r5.Hi3rQKKVBuuolfniQ5RKHa9zhorhbZ6S50sDDTKdza\",\"updated_at\":\"2018-02-06T15:19:03.967-05:00\"},\"Rd61jpgA0u8_NUdJB7tHnQ\":{\"token\":\"$2a$10$TsNFKf3bYs/asWMS4QIXh.iQwMxAv1T0dpRgP6DUDjHvxRF/3VMe6\",\"expiry\":1519158006,\"last_token\":\"$2a$10$Y3q3EJ4kXrtV9qc700jHI.EZlBuSEwuE.rSqEU7b1wTvK/ZECJApK\",\"updated_at\":\"2018-02-06T15:20:06.564-05:00\"},\"EKxGbnnCyhTRWJKJdEQ4dQ\":{\"token\":\"$2a$10$5cH61/.JHr/Ufya.455XCegxlkM6evRKpEPY0Pa5phbfC.JazvJTC\",\"expiry\":1519158295,\"last_token\":\"$2a$10$7kjr2Z2GFnquwnLMZ9TVZu74O34e7Yl4fl5FwHgGHHjIBJRtxFV62\",\"updated_at\":\"2018-02-06T15:24:55.487-05:00\"}}"], ["updated_at", "2018-02-06 20:24:55.489642"], ["id", 1]]
+  [1m[35m (31.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 512ms (Views: 30.0ms | ActiveRecord: 54.8ms)
+
+

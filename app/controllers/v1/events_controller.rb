@@ -1,9 +1,8 @@
 class V1::EventsController < ApplicationController
-    #before_action :authenticate_worker!#, except: [:index]
+    before_action :authenticate_worker!#, except: [:index]
 
     def index
         events = Event.all
-        #render json: current_worker
         render json: events
     end
 
@@ -11,7 +10,7 @@ class V1::EventsController < ApplicationController
       event = Event.find(params[:id])
 
 
-      if event.customer == current_customer || current_worker
+      if event.worker == current_worker
         render json: event
       else
         render json: "You have no authority to see this", status: 401

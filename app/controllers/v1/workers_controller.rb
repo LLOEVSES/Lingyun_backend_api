@@ -10,7 +10,7 @@ class V1::WorkersController < ApplicationController
 
     def show
       worker = Worker.find(params[:id])
-      render json: "ii"
+      render json: worker
     end
 
     def destroy
