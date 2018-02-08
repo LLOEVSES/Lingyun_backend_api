@@ -1,5 +1,11 @@
 # README
 
+Customer edit X
+worker edit X
+event delete X
+Customer add event X
+worker finish event X
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

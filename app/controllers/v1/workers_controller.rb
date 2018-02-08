@@ -1,19 +1,35 @@
 class V1::WorkersController < ApplicationController
     before_action :authenticate_worker!
     def index
-      # if worker_signed_in?
          render json: current_worker
-      # else
-      #   redirect_to '/workers/sign_in', render: 401
-
     end
 
     def show
-      worker = Worker.find(params[:id])
-      render json: worker
+      render json: current_worker.events
+    end
+
+    def update
+      if current_worker.update(worker_params)
+        render json: current_worker
+      else
+        render json: current_worker.errors.messages
+      end
     end
 
     def destroy
 
+      if current_worker.events.exists?(params[:id])
+        event = current_worker.events.find(params[:id])
+        event.status = "finished"
+        event.save
+        render json: "event finished"
+      else
+        render json: "Cannot find this event"
+      end
     end
+
+    private
+      def worker_params
+        params.require(:worker).permit(:name)
+      end
 end
