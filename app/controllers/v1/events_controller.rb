@@ -2,7 +2,11 @@ class V1::EventsController < ApplicationController
     before_action :authenticate_worker!#, except: [:index]
 
     def index
-        events = Event.all
+        if params[:status] == "searching"
+            events = Event.where(status: "searching")
+        elsif params[:status] == "finished"
+            events = Event.where(status: "finished")
+        end
         render json: events
     end
 
@@ -40,7 +44,7 @@ class V1::EventsController < ApplicationController
 
     def update
       @event = Event.find(params[:id])
-
+      @event.worker_id = current_worker.id
       if @event.update(event_params)
         redirect_to @event
       else
