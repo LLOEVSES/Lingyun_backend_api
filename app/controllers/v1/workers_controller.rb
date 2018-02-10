@@ -1,13 +1,16 @@
 class V1::WorkersController < ApplicationController
     before_action :authenticate_worker!
+    #get current worker information
     def index
          render json: current_worker
     end
-
+    #get specific event find by id
     def show
-      render json: current_worker.events
+      render json: current_worker.events.find(params[:id])
     end
 
+
+    # Change worker information
     def update
       if current_worker.update(worker_params)
         render json: current_worker
@@ -16,6 +19,7 @@ class V1::WorkersController < ApplicationController
       end
     end
 
+    #worker finish event
     def destroy
 
       if current_worker.events.exists?(params[:id])

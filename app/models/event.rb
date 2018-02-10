@@ -5,5 +5,5 @@ class Event < ApplicationRecord
     validates :location, presence: true
     validates :message, presence: true
 
-    enum status: [:searching, :accepted, :processing, :finished]
+    enum status: [:searching, :accepted, :processing, :finished, :cancelled]
 end
