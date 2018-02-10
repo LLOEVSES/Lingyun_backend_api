@@ -18,7 +18,7 @@ class V1::CustomerEventsController < ApplicationController
         if event.save
           render json: event
         else
-          render json: event.errors.message
+          render json: event.errors.messages
         end
     end
 
