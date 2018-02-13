@@ -5,14 +5,14 @@ class V1::WorkersController < ApplicationController
          render json: current_worker
     end
     #get specific event find by id
-    def show
-      render json: current_worker.events.find(params[:id])
-    end
+    # def show
+    #   render json: current_worker.events.find(params[:id])
+    # end
 
 
     # Change worker information
     def update
-      if current_worker.update(worker_params)
+      if current_worker.update(:name => request.headers[:name])
         render json: current_worker
       else
         render json: current_worker.errors.messages

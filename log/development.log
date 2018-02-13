@@ -2703,3 +2703,329 @@ app/controllers/v1/customer_events_controller.rb:46: syntax error, unexpected en
   [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mWorker Load (0.2ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-10 16:59:12 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"id"=>""}
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"M6xB23_kESxEDTX0-kNpnw\":{\"token\":\"$2a$10$4rO0mL3QbsHeFjWbHBeFqepce7rNnJZE.yg3ifKTEOAArl8/6I1CC\",\"expiry\":1519323005,\"last_token\":\"$2a$10$7IoNPw8h..kYNZ3.A7dIbefrm420cO3nS7Lkq8gv6prsPFdvw5L6.\",\"updated_at\":\"2018-02-08T13:10:05.403-05:00\"},\"SXg1Mo2zOq4BZKg2tGW1tw\":{\"token\":\"$2a$10$LFSqn.TIeU1UAukSkF5Y4eKaszQXuJGj/n5i.G5HMP71ytoTxGF.S\",\"expiry\":1519333485,\"last_token\":\"$2a$10$YZJu4azfkOVMq1z5ZebXIOBH6XscVRVg/VU.QJT153pKLhGeedEXu\",\"updated_at\":\"2018-02-08T16:04:45.506-05:00\"},\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$gQEZx9FZ5qoRffu1d2yly.nvzmsF5FRk/93LwevBUcFqlPuM2u68a\",\"expiry\":1519509553}}"], ["updated_at", "2018-02-10 21:59:13.721661"], ["id", 1]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 15], ["current_sign_in_at", "2018-02-10 21:59:13.808363"], ["last_sign_in_at", "2018-02-10 21:16:26.309105"], ["updated_at", "2018-02-10 21:59:13.832927"], ["id", 1]]
+  [1m[35m (29.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"SXg1Mo2zOq4BZKg2tGW1tw\":{\"token\":\"$2a$10$LFSqn.TIeU1UAukSkF5Y4eKaszQXuJGj/n5i.G5HMP71ytoTxGF.S\",\"expiry\":1519333485,\"last_token\":\"$2a$10$YZJu4azfkOVMq1z5ZebXIOBH6XscVRVg/VU.QJT153pKLhGeedEXu\",\"updated_at\":\"2018-02-08T16:04:45.506-05:00\"},\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"expiry\":1519509554,\"last_token\":\"$2a$10$gQEZx9FZ5qoRffu1d2yly.nvzmsF5FRk/93LwevBUcFqlPuM2u68a\",\"updated_at\":\"2018-02-10T16:59:14.102-05:00\"}}"], ["updated_at", "2018-02-10 21:59:14.104650"], ["id", 1]]
+  [1m[35m (30.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 962ms (Views: 4.3ms | ActiveRecord: 136.2ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:01:12 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.4ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (17.5ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"SXg1Mo2zOq4BZKg2tGW1tw\":{\"token\":\"$2a$10$LFSqn.TIeU1UAukSkF5Y4eKaszQXuJGj/n5i.G5HMP71ytoTxGF.S\",\"expiry\":1519333485,\"last_token\":\"$2a$10$YZJu4azfkOVMq1z5ZebXIOBH6XscVRVg/VU.QJT153pKLhGeedEXu\",\"updated_at\":\"2018-02-08T16:04:45.506-05:00\"},\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"}}"], ["updated_at", "2018-02-10 22:01:13.661353"], ["id", 1]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 517ms (Views: 0.5ms | ActiveRecord: 41.7ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:02:24 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_customer! rendered or redirected
+Completed 401 Unauthorized in 245ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:02:40 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_customer! rendered or redirected
+Completed 401 Unauthorized in 12ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-10 17:02:47 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"id"=>""}
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.5ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"SXg1Mo2zOq4BZKg2tGW1tw\":{\"token\":\"$2a$10$LFSqn.TIeU1UAukSkF5Y4eKaszQXuJGj/n5i.G5HMP71ytoTxGF.S\",\"expiry\":1519333485,\"last_token\":\"$2a$10$YZJu4azfkOVMq1z5ZebXIOBH6XscVRVg/VU.QJT153pKLhGeedEXu\",\"updated_at\":\"2018-02-08T16:04:45.506-05:00\"},\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$WLGcXrF5x4OgFadXH1x7ZeilcnRD9GIG6YkR9ixfmvBLm4ag/G/2m\",\"expiry\":1519509768}}"], ["updated_at", "2018-02-10 22:02:48.038915"], ["id", 1]]
+  [1m[35m (29.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.1ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 16], ["current_sign_in_at", "2018-02-10 22:02:48.134382"], ["last_sign_in_at", "2018-02-10 21:59:13.808363"], ["updated_at", "2018-02-10 22:02:48.212328"], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"expiry\":1519509768,\"last_token\":\"$2a$10$WLGcXrF5x4OgFadXH1x7ZeilcnRD9GIG6YkR9ixfmvBLm4ag/G/2m\",\"updated_at\":\"2018-02-10T17:02:48.441-05:00\"}}"], ["updated_at", "2018-02-10 22:02:48.444353"], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1040ms (Views: 0.7ms | ActiveRecord: 131.7ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:02:51 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (17.0ms)[0m  [1m[32mINSERT INTO "events" ("message", "location", "customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["message", "canade"], ["location", "ohhhhhhhhhhhhhhhhhhhhhhhhh"], ["customer_id", 1], ["worker_id", 2], ["created_at", "2018-02-10 22:02:52.173312"], ["updated_at", "2018-02-10 22:02:52.173312"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.5ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"expiry\":1519509768,\"last_token\":\"$2a$10$WLGcXrF5x4OgFadXH1x7ZeilcnRD9GIG6YkR9ixfmvBLm4ag/G/2m\",\"updated_at\":\"2018-02-10T17:02:52.276-05:00\"}}"], ["updated_at", "2018-02-10 22:02:52.286717"], ["id", 1]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 589ms (Views: 19.0ms | ActiveRecord: 67.9ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:03:15 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.5ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (18.6ms)[0m  [1m[32mINSERT INTO "events" ("message", "location", "customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["message", "canade"], ["location", "ohhhhhhhhhhhhhhhhhhhhhhhhh"], ["customer_id", 1], ["worker_id", 2], ["created_at", "2018-02-10 22:03:16.405666"], ["updated_at", "2018-02-10 22:03:16.405666"]]
+  [1m[35m (23.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (18.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"}}"], ["updated_at", "2018-02-10 22:03:16.678891"], ["id", 1]]
+  [1m[35m (42.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 837ms (Views: 8.8ms | ActiveRecord: 111.3ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:03:32 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_customer! rendered or redirected
+Completed 401 Unauthorized in 132ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-10 17:03:37 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"id"=>""}
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"-azba0ITGtg8p1RyHPlAbw\":{\"token\":\"$2a$10$HB9HGbZ9fonr5pxiEE7qq.IB2GiOHiDUX9AfeKKZIK6Ka4Z1HBxES\",\"expiry\":1519333840,\"last_token\":\"$2a$10$IVWFIgAc4s85NePndr1Mq.pNnhcqYpwgdyJ4lXJrpC1sm41beUyZi\",\"updated_at\":\"2018-02-08T16:10:40.932-05:00\"},\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"expiry\":1519509818}}"], ["updated_at", "2018-02-10 22:03:38.285905"], ["id", 1]]
+  [1m[35m (22.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 17], ["current_sign_in_at", "2018-02-10 22:03:38.342055"], ["last_sign_in_at", "2018-02-10 22:02:48.134382"], ["updated_at", "2018-02-10 22:03:38.351579"], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (17.5ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"}}"], ["updated_at", "2018-02-10 22:03:38.575176"], ["id", 1]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 759ms (Views: 1.1ms | ActiveRecord: 91.3ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:07:08 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_customer! rendered or redirected
+Completed 401 Unauthorized in 61ms (Views: 0.5ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-10 17:07:13 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"id"=>""}
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"Ik4vWPVxNvCk8J6NOM9_fA\":{\"token\":\"$2a$10$fEQjiHYV5peolxZc/ots9OtoKhYB9b9FskF9XdPIStmZeTzrRbljG\",\"expiry\":1519333903,\"last_token\":\"$2a$10$BjANUFyPnPQpyTl6IaWZO.pR0nIKkuiq0agNgmEgCSqTXiBiWBPem\",\"updated_at\":\"2018-02-08T16:11:43.136-05:00\"},\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$Iz4zVKI5LUCTJkrDH.ixoufuqRX17wOKBK5sEO9xkwOp292jcK6Fe\",\"expiry\":1519510034}}"], ["updated_at", "2018-02-10 22:07:14.454855"], ["id", 1]]
+  [1m[35m (84.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.5ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 18], ["current_sign_in_at", "2018-02-10 22:07:14.585203"], ["last_sign_in_at", "2018-02-10 22:03:38.342055"], ["updated_at", "2018-02-10 22:07:14.612271"], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.7ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$qXTWQGGpsn26qI4n8Xds0OkqbcIRAZIA1S8YbGbQ9KuL3cIuIcOVe\",\"expiry\":1519510034,\"last_token\":\"$2a$10$Iz4zVKI5LUCTJkrDH.ixoufuqRX17wOKBK5sEO9xkwOp292jcK6Fe\",\"updated_at\":\"2018-02-10T17:07:14.941-05:00\"}}"], ["updated_at", "2018-02-10 22:07:14.944228"], ["id", 1]]
+  [1m[35m (52.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 1116ms (Views: 1.4ms | ActiveRecord: 212.0ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-10 17:07:26 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.5ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (18.5ms)[0m  [1m[32mINSERT INTO "events" ("message", "location", "customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["message", "canade"], ["location", "ohhhhhhhhhhhhhhhhhhhhhhhhh"], ["customer_id", 1], ["worker_id", 2], ["created_at", "2018-02-10 22:07:26.895807"], ["updated_at", "2018-02-10 22:07:26.895807"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (17.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$o7xzAFfLvJpmf5aj2q2Oau/0gNgzixt4UpAqlW369820DeCskBzKK\",\"expiry\":1519510047,\"last_token\":\"$2a$10$qXTWQGGpsn26qI4n8Xds0OkqbcIRAZIA1S8YbGbQ9KuL3cIuIcOVe\",\"updated_at\":\"2018-02-10T17:07:27.144-05:00\"}}"], ["updated_at", "2018-02-10 22:07:27.147428"], ["id", 1]]
+  [1m[35m (81.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 770ms (Views: 2.9ms | ActiveRecord: 138.5ms)
+
+
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-10 17:10:48 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"id"=>""}
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"0XMz7owUdjcSoLZwhfGyog\":{\"token\":\"$2a$10$AC4EY1C/Hmax/nsH6EwxtugcxoP7tcxFegQCdlW65n0I/p0FTdv8C\",\"expiry\":1519334058,\"last_token\":\"$2a$10$r2GUl81MLhkl2RrTDDhbZeQipq6n4t.PprJO6.dOF62bgvIiO3t2m\",\"updated_at\":\"2018-02-08T16:14:18.412-05:00\"},\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$o7xzAFfLvJpmf5aj2q2Oau/0gNgzixt4UpAqlW369820DeCskBzKK\",\"expiry\":1519510047,\"last_token\":\"$2a$10$qXTWQGGpsn26qI4n8Xds0OkqbcIRAZIA1S8YbGbQ9KuL3cIuIcOVe\",\"updated_at\":\"2018-02-10T17:07:27.144-05:00\"},\"oK78CaV7PC6taSVsRLUDqQ\":{\"token\":\"$2a$10$rBIyyyYMMbk9k1BnA7cZEe6unxXyoL.43cqs6VUNju7nzFg6OTz3O\",\"expiry\":1519510249}}"], ["updated_at", "2018-02-10 22:10:49.913100"], ["id", 1]]
+  [1m[35m (34.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 19], ["current_sign_in_at", "2018-02-10 22:10:49.993300"], ["last_sign_in_at", "2018-02-10 22:07:14.585203"], ["updated_at", "2018-02-10 22:10:50.004303"], ["id", 1]]
+  [1m[35m (26.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (17.6ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"e9-f78cswZ3hYKM7bLiT8w\":{\"token\":\"$2a$10$NzeUT/a5qBq7VhbSGNDMLOV115Mx.E7wYsO2Rdjl0uHOz3AmmFvOK\",\"expiry\":1519505025,\"last_token\":\"$2a$10$wXNyAxvHBR2nAPynYFM7aOjYMLOSN9X.3M5C8KNn4ByqT2a/FsPN6\",\"updated_at\":\"2018-02-10T15:43:45.752-05:00\"},\"uw_I9GxHPKlPoL9NSyZcDw\":{\"token\":\"$2a$10$1G.FAx8j2KSdlobOcoQeMeTEjPiSrFK3q9C9clxsx3HDdjOsD06/G\",\"expiry\":1519506460,\"last_token\":\"$2a$10$eMeO/NCVf23yQODlVFTfT.G6R3OrxoAQxFckzb6aIdOJQ1jFaNQ3a\",\"updated_at\":\"2018-02-10T16:07:40.868-05:00\"},\"V7x7UfGIr4HTgXjGqEF30A\":{\"token\":\"$2a$10$PlT28KzoFXzec803R89UJ.apSC0X7U5cojd7l4bq1wBrtl4zg88/i\",\"expiry\":1519506542,\"last_token\":\"$2a$10$4voP3MFrMNQskKRRCzkEde75bAE4LmIN2mb0308cwgZvtzWHo2Giu\",\"updated_at\":\"2018-02-10T16:09:02.753-05:00\"},\"vTMcT6mqzHS7pI7ks5dhdw\":{\"token\":\"$2a$10$S3cpa4eZboTCnipGMluKred9ZooYtoKZg.elWSw.YvIqZ.SYTR18K\",\"expiry\":1519506813,\"last_token\":\"$2a$10$7dbdTyngZxypJxtI7kN1FevIgo2I81TBkUytNcYdGX6XF4.rFSQkG\",\"updated_at\":\"2018-02-10T16:13:33.205-05:00\"},\"5ZSBNJTPXOPk8d3SfMRH5w\":{\"token\":\"$2a$10$XadYjFXC2EXPsXe7I3crcuAslEmL68C7XSjsB/tNnk0WKs8.fk7p.\",\"expiry\":1519506986,\"last_token\":\"$2a$10$OuvOlizaMohYNnqtrXyCjucrjlmJYa5IgV60GCXqt5b0m.4krqbV2\",\"updated_at\":\"2018-02-10T16:16:40.399-05:00\"},\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$o7xzAFfLvJpmf5aj2q2Oau/0gNgzixt4UpAqlW369820DeCskBzKK\",\"expiry\":1519510047,\"last_token\":\"$2a$10$qXTWQGGpsn26qI4n8Xds0OkqbcIRAZIA1S8YbGbQ9KuL3cIuIcOVe\",\"updated_at\":\"2018-02-10T17:07:27.144-05:00\"},\"oK78CaV7PC6taSVsRLUDqQ\":{\"token\":\"$2a$10$oUTi1tkmhn.qSFnQIcG51.sL/EucVECVTYIexQC6BzSrMKAfvPg3m\",\"expiry\":1519510250,\"last_token\":\"$2a$10$rBIyyyYMMbk9k1BnA7cZEe6unxXyoL.43cqs6VUNju7nzFg6OTz3O\",\"updated_at\":\"2018-02-10T17:10:50.246-05:00\"}}"], ["updated_at", "2018-02-10 22:10:50.249495"], ["id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 841ms (Views: 6.6ms | ActiveRecord: 123.8ms)
+
+
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."status" = ? LIMIT ?[0m  [["status", 3], ["LIMIT", 11]]
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."status" = ? LIMIT ?[0m  [["status", 4], ["LIMIT", 11]]
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-13 16:03:12 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDetails (20180213205406)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "customers" ADD "phone_number" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "workers" ADD "phone_number" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "customers" ADD "area" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "workers" ADD "company" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180213205406"]]
+  [1m[35m (37.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_email' AND type='index'
+[0m
