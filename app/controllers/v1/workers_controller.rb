@@ -36,4 +36,5 @@ class V1::WorkersController < ApplicationController
       def worker_params
         params.require(:worker).permit(:name)
       end
+
 end

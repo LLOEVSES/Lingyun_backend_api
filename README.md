@@ -30,8 +30,9 @@ API checklist:
 
   will get: name, address, email, cellphone
 * cus change self info              PATCH /customers/update/{{params:id}}
+* customer get                      GET   /customers
 
-  may get several of: name, address, email, cellphone
+   name, address, email, cellphone  -------Added to database
 
 # worker functions
 
@@ -40,3 +41,7 @@ API checklist:
 * worker get finished events (events history)                 GET /events?status=finished
 * worker get self info                                        GET /workers
 * worker change self info                           PATCH /workers/{{params:id}}
+
+    #new action
+    * worker  accept event                              GET   /workers/{:id}/accepted
+    * worker  processing event                          GET   /workers/{:id}/processing

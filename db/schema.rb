@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180213205406) do
     t.datetime "updated_at", null: false
     t.string "phone_number"
     t.string "area"
+    t.string "location"
     t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 20180213205406) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
+    t.string "area"
     t.string "company"
     t.index ["confirmation_token"], name: "index_workers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_workers_on_email", unique: true
