@@ -7,7 +7,7 @@ class V1::CustomersController < ApplicationController
 
     #Update current customer's information
     def update
-      if current_customer.update(:name => request.headers[:name])
+      if current_customer.update(:name => request.headers[:name],:phone_number => request.headers[:phone_number], :area => request.headers[:area], :location => request.headers[:location])
         render json: current_customer
       else
         render json: current_customer.errors.messages

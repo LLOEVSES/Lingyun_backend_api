@@ -12,7 +12,7 @@ class V1::WorkersController < ApplicationController
 
     # Change worker information
     def update
-      if current_worker.update(:name => request.headers[:name])
+      if current_worker.update(:name => request.headers[:name],:phone_number => request.headers[:phone_number], :area => request.headers[:area], :company => request.headers[:company])
         render json: current_worker
       else
         render json: current_worker.errors.messages

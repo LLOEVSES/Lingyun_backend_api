@@ -8,7 +8,6 @@ class AddDetails < ActiveRecord::Migration[5.1]
     add_column :customers, :area, :string
     add_column :workers, :area, :string
     add_column :workers, :company, :string
-
     add_column :customers, :location, :string
 
   end
