@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   scope defaults: { format: 'json' } do
       scope module: :v1 do#, constraints: { subdomain: 'api' } do#, constraints: ApiVersion.new('v1', true) do
           resources :customers
-          resources :events
-          resources :workers do
+          resources :events do
               member do
                   get 'accepted'
                   get 'processing'
               end
           end
+          resources :workers
           resources :customer_events
           #resources :customers_tokens, :only => [:create, :destroy]
 
