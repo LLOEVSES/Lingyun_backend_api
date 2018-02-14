@@ -1,3 +1,4 @@
+![Aaron Swartz](https://github.com/LLOEVSES/Lingyun_frontend/blob/master/src/assets/logo.svg)
 # Lingyun Backend API
 
 This README would normally document whatever steps are necessary to get the
