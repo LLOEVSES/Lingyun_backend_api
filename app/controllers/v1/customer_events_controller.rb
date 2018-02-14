@@ -34,17 +34,19 @@ class V1::CustomerEventsController < ApplicationController
 
     #custoemr cancel event
     def destroy
-        if current_customer.events.exists?(params[:id])
-            event = current_customer.events.find(params[:id])
+        event = current_customer.events.find(params[:id])
+        if event
             if event.status == "searching"
                 event.status = "cancelled"
                 if event.save
-                    render :json event
+                    render json: event
                 else
-                    render :json event.errors.messages
+                    render json: event.errors.messages
                 end
+            elsif event.status == "cancelled"
+                render json: "Event has already cancelled"
             else
-                render :json "Event is processing or finishied, please contact your worker"
+                render json: "Event is processing or finishied, please contact your worker"
             end
         else
             render json: "Event does not exist"
