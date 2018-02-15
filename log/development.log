@@ -5433,3 +5433,279 @@ Completed 200 OK in 539ms (Views: 0.3ms | ActiveRecord: 66.4ms)
   [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."worker_id" = ? LIMIT ?[0m  [["worker_id", 1], ["LIMIT", 11]]
   [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
   [1m[36mEvent Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."worker_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["worker_id", 1], ["id", 6], ["LIMIT", 1]]
+Started POST "/customer_auth/sign_in?id=" for 127.0.0.1 at 2018-02-13 23:26:15 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"id"=>""}
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"DCTW-59qqZiOv94-5jTOuA\":{\"token\":\"$2a$10$Y0AyOqfU.cNUA38cgRiNb.3xWE/HxuyF0/DAkf8xN3d1rVWUGfAwu\",\"expiry\":1519509673,\"last_token\":\"$2a$10$qQ1KnnGKHcO/DDDekV7ld.oUf1sfolfRq8p9MFma9dLIOJq.Fgdwa\",\"updated_at\":\"2018-02-10T17:01:13.657-05:00\"},\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$o7xzAFfLvJpmf5aj2q2Oau/0gNgzixt4UpAqlW369820DeCskBzKK\",\"expiry\":1519510047,\"last_token\":\"$2a$10$qXTWQGGpsn26qI4n8Xds0OkqbcIRAZIA1S8YbGbQ9KuL3cIuIcOVe\",\"updated_at\":\"2018-02-10T17:07:27.144-05:00\"},\"oK78CaV7PC6taSVsRLUDqQ\":{\"token\":\"$2a$10$oUTi1tkmhn.qSFnQIcG51.sL/EucVECVTYIexQC6BzSrMKAfvPg3m\",\"expiry\":1519510250,\"last_token\":\"$2a$10$rBIyyyYMMbk9k1BnA7cZEe6unxXyoL.43cqs6VUNju7nzFg6OTz3O\",\"updated_at\":\"2018-02-10T17:10:50.246-05:00\"},\"P3WC2Jwiw0hqW9JQlGfDIA\":{\"token\":\"$2a$10$tXVEZyQ/J1iEgz49AzobEOty4RMON43tta0IGdBUsBWC2t8Ymdj.q\",\"expiry\":1519765468,\"last_token\":\"$2a$10$uyFx8dDrnCduM3tTacdFZ.4zDRZPNZzTBRiFjY8wbNLJH9byRkBOi\",\"updated_at\":\"2018-02-13T16:04:28.103-05:00\"},\"sX9ykX183tsqq7RuTjhpvQ\":{\"token\":\"$2a$10$u47siECd8ccSufDit2x5v.BBVdWr4NCiBtfq9dEAtE.s5nR/qW1bm\",\"expiry\":1519781276,\"last_token\":\"$2a$10$6/xF0KcRK3CmUQOhNlY.IOIqMwJQj5davNdn5BxtdSy8RtxZbqp2S\",\"updated_at\":\"2018-02-13T20:27:56.874-05:00\"},\"qeBI6faxcB09gHC6vpAJ2Q\":{\"token\":\"$2a$10$TR7zFkpTCFC2yfPDaZ.DieHPDhuCK32WtxynScnSULdBLZfFGbycO\",\"expiry\":1519781444,\"last_token\":\"$2a$10$KX37DDpO8HYNCokPOZe42OLVkEoQt6JdUkuaNBGnuWKApjv2E1RzW\",\"updated_at\":\"2018-02-13T20:30:44.286-05:00\"},\"k3N_VdTiVk2PAtHZMrHi0w\":{\"token\":\"$2a$10$gsrxmLlwBMHBtzMzV5NyzeI2b0cCF4dLM.SMRkokTCcHIcBR0k0gC\",\"expiry\":1519781788,\"last_token\":\"$2a$10$Cx2E/UHYbHNNFQn1Rb0mqOQ/UdauL9ucZFreGbHp5MpJlGmskHeYy\",\"updated_at\":\"2018-02-13T20:36:28.032-05:00\"},\"cRmxA8Xx4hsloEYVMp1gZw\":{\"token\":\"$2a$10$ol7VHg9bCENAtEktvEcLJ.x9uwF9FhOd7MmmYdf70YHt5RVIIxunC\",\"expiry\":1519781826,\"last_token\":\"$2a$10$zjEQZnotJJpdTdNlkuclGu2uO6.3yw.yj2eUQ.RjVpnS3bFXBspHy\",\"updated_at\":\"2018-02-13T20:37:06.098-05:00\"},\"nXXzE4xO-CyCSi939hhsnQ\":{\"token\":\"$2a$10$uN7s7PVCdSo2epdX29lfwOleKTsJaPXanBvM/y7hXl04xY0q.mSWe\",\"expiry\":1519791986}}"], ["updated_at", "2018-02-14 04:26:26.992581"], ["id", 1]]
+  [1m[35m (33.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 25], ["current_sign_in_at", "2018-02-14 04:26:27.042683"], ["last_sign_in_at", "2018-02-14 01:36:47.360998"], ["updated_at", "2018-02-14 04:26:27.046692"], ["id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (2.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"CCbvknMWvaf3BLQyZ9qJ7g\":{\"token\":\"$2a$10$vmMs25zJu4nTJSS29hdk2uUfahO2wbUD8ufxkSeDG8WrgbC70qp8q\",\"expiry\":1519509796,\"last_token\":\"$2a$10$ZC0I7SEjs63jYgaepy7TsuOl22AuFg/v/5HtAKQHSNPOnTLEdB2QC\",\"updated_at\":\"2018-02-10T17:03:16.676-05:00\"},\"CLW8RYFVtumXlbwY-myNag\":{\"token\":\"$2a$10$Pajl0ADpYnDgwL7Zg.56nu10RxO0z31KtOEAi2dthdGjr7kCo6CFO\",\"expiry\":1519509818,\"last_token\":\"$2a$10$tiO2IYO10Lx1LoKxZEq9VueSMB7/uxzxIakk75wAFCJQLxr9.z2Fa\",\"updated_at\":\"2018-02-10T17:03:38.572-05:00\"},\"gAlzyxRLaEi5upuahRX39g\":{\"token\":\"$2a$10$o7xzAFfLvJpmf5aj2q2Oau/0gNgzixt4UpAqlW369820DeCskBzKK\",\"expiry\":1519510047,\"last_token\":\"$2a$10$qXTWQGGpsn26qI4n8Xds0OkqbcIRAZIA1S8YbGbQ9KuL3cIuIcOVe\",\"updated_at\":\"2018-02-10T17:07:27.144-05:00\"},\"oK78CaV7PC6taSVsRLUDqQ\":{\"token\":\"$2a$10$oUTi1tkmhn.qSFnQIcG51.sL/EucVECVTYIexQC6BzSrMKAfvPg3m\",\"expiry\":1519510250,\"last_token\":\"$2a$10$rBIyyyYMMbk9k1BnA7cZEe6unxXyoL.43cqs6VUNju7nzFg6OTz3O\",\"updated_at\":\"2018-02-10T17:10:50.246-05:00\"},\"P3WC2Jwiw0hqW9JQlGfDIA\":{\"token\":\"$2a$10$tXVEZyQ/J1iEgz49AzobEOty4RMON43tta0IGdBUsBWC2t8Ymdj.q\",\"expiry\":1519765468,\"last_token\":\"$2a$10$uyFx8dDrnCduM3tTacdFZ.4zDRZPNZzTBRiFjY8wbNLJH9byRkBOi\",\"updated_at\":\"2018-02-13T16:04:28.103-05:00\"},\"sX9ykX183tsqq7RuTjhpvQ\":{\"token\":\"$2a$10$u47siECd8ccSufDit2x5v.BBVdWr4NCiBtfq9dEAtE.s5nR/qW1bm\",\"expiry\":1519781276,\"last_token\":\"$2a$10$6/xF0KcRK3CmUQOhNlY.IOIqMwJQj5davNdn5BxtdSy8RtxZbqp2S\",\"updated_at\":\"2018-02-13T20:27:56.874-05:00\"},\"qeBI6faxcB09gHC6vpAJ2Q\":{\"token\":\"$2a$10$TR7zFkpTCFC2yfPDaZ.DieHPDhuCK32WtxynScnSULdBLZfFGbycO\",\"expiry\":1519781444,\"last_token\":\"$2a$10$KX37DDpO8HYNCokPOZe42OLVkEoQt6JdUkuaNBGnuWKApjv2E1RzW\",\"updated_at\":\"2018-02-13T20:30:44.286-05:00\"},\"k3N_VdTiVk2PAtHZMrHi0w\":{\"token\":\"$2a$10$gsrxmLlwBMHBtzMzV5NyzeI2b0cCF4dLM.SMRkokTCcHIcBR0k0gC\",\"expiry\":1519781788,\"last_token\":\"$2a$10$Cx2E/UHYbHNNFQn1Rb0mqOQ/UdauL9ucZFreGbHp5MpJlGmskHeYy\",\"updated_at\":\"2018-02-13T20:36:28.032-05:00\"},\"cRmxA8Xx4hsloEYVMp1gZw\":{\"token\":\"$2a$10$ol7VHg9bCENAtEktvEcLJ.x9uwF9FhOd7MmmYdf70YHt5RVIIxunC\",\"expiry\":1519781826,\"last_token\":\"$2a$10$zjEQZnotJJpdTdNlkuclGu2uO6.3yw.yj2eUQ.RjVpnS3bFXBspHy\",\"updated_at\":\"2018-02-13T20:37:06.098-05:00\"},\"nXXzE4xO-CyCSi939hhsnQ\":{\"token\":\"$2a$10$rAlb.Sc3TlHgJovEGSazduxttn9DCZN7usq10GB4orNShmZkqcxt6\",\"expiry\":1519791987,\"last_token\":\"$2a$10$uN7s7PVCdSo2epdX29lfwOleKTsJaPXanBvM/y7hXl04xY0q.mSWe\",\"updated_at\":\"2018-02-13T23:26:27.157-05:00\"}}"], ["updated_at", "2018-02-14 04:26:27.161035"], ["id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 10865ms (Views: 0.5ms | ActiveRecord: 69.3ms)
+
+
+Started POST "/customer_auth/password" for 127.0.0.1 at 2018-02-13 23:27:52 -0500
+Processing by DeviseTokenAuth::PasswordsController#create as */*
+Completed 401 Unauthorized in 79ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customer_auth/password" for 127.0.0.1 at 2018-02-13 23:27:59 -0500
+Processing by DeviseTokenAuth::PasswordsController#create as */*
+  Parameters: {"email"=>"customer@gmail.com"}
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (uid = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."reset_password_token" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["reset_password_token", "d9e2b183359ad99a6ff172994598337b8010c21d845343ed76b34ac9a0dc6059"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[33mUPDATE "customers" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["reset_password_token", "d9e2b183359ad99a6ff172994598337b8010c21d845343ed76b34ac9a0dc6059"], ["reset_password_sent_at", "2018-02-14 04:27:59.873837"], ["updated_at", "2018-02-14 04:27:59.876883"], ["id", 1]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/reset_password_instructions.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/reset_password_instructions.html.erb (16.0ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 1216.2ms
+Sent mail to customer@gmail.com (2045.4ms)
+Date: Tue, 13 Feb 2018 23:28:01 -0500
+From: tangxingbang@gmail.com
+Reply-To: tangxingbang@gmail.com
+To: customer@gmail.com
+Message-ID: <5a83bad1c0daf_33b83b39e68146@DESKTOP-LQIU2VG.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+email: customer@gmail.com
+provider: email
+redirect-url: confirmed
+client-config: default
+
+<p>Hello world customer@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/customer_auth/password/edit?config=default&redirect_url=confirmed&reset_password_token=ji7apUXg_yA5R1KSx7yG">Change my password</a></p>
+
+<p>If you didn&#39;t request this, please ignore this email.</p>
+<p>Your password won&#39;t change until you access the link above and create a new one.</p>
+Completed 200 OK in 4786ms (Views: 0.4ms | ActiveRecord: 17.3ms)
+
+
+Started POST "/worker_auth/sign_in" for 127.0.0.1 at 2018-02-14 15:08:58 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE (email = 'worker@gmail.com' AND provider='email') ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"7yssob3K9QudIVYOzALxaA\":{\"token\":\"$2a$10$VaBMN9IUaCn.AO9TyvH8O.dYa9vZFuyeK1Uj95uH/S4SXUZ.X7b6G\",\"expiry\":1519336273,\"last_token\":\"$2a$10$8B2kVBCXOzajZjpChKpyNe9dGO2l8wXF3WmWuP49nFCqufjgsKjqm\",\"updated_at\":\"2018-02-08T16:51:13.474-05:00\"},\"QsbjUoZxlQXq-RiQ7S5Olw\":{\"token\":\"$2a$10$5Yj.2rixmrVlPgGildKbPuCv17CktmmEFX0dToigdfxZ/GUOsz9Qi\",\"expiry\":1519336343,\"last_token\":\"$2a$10$rXUsBHsCElUtvnbi/k8sY.bvvrKmrIT.j7flRg0qi9AQRTaWj/Wj6\",\"updated_at\":\"2018-02-08T16:52:23.084-05:00\"},\"MHyGMidFeD-ehrUzeE6ryg\":{\"token\":\"$2a$10$fI/M4tXiw9ScUObIpqu6RecwQQAmCw9PKzx5ZLwUuYLYu49Wb0oLK\",\"expiry\":1519505175,\"last_token\":\"$2a$10$xSB9qEqTdJXtxbU0gx5xs.eU.ApjYEL5uvoKjxBcxf6Lm65mU018e\",\"updated_at\":\"2018-02-10T15:46:15.537-05:00\"},\"--9yDlQT1gEOS01QwD9FsQ\":{\"token\":\"$2a$10$GuNelKK0RbokfaiMXMN3Jek5uRfYJtE3ThMj5/8B8A3IXXfRexODO\",\"expiry\":1519505334,\"last_token\":\"$2a$10$zwE6WAp193Fx/785bwcsL.YBJIbB913Bpf66GveBKIYvhFktk2.s.\",\"updated_at\":\"2018-02-10T15:48:54.171-05:00\"},\"OVPOU2wDxLAZK3M2lyOXqQ\":{\"token\":\"$2a$10$IVYg/Wh7r1YXrM7yUBkXeeqSz8RSGvEjY2bazqkZ1zmKzKc9zNe7y\",\"expiry\":1519505393,\"last_token\":\"$2a$10$g45b.RhDytSU8JAfSAXnWeoWqRqM8EznIvQbgMyEEllVj9LDYiyPq\",\"updated_at\":\"2018-02-10T15:49:53.050-05:00\"},\"ZdYQqyW8vR3cKT8FSkJ2fQ\":{\"token\":\"$2a$10$ZilMAmkov.ASPbnKuevUJ.C1v26.u6t0YzNH9mMorQW899aJZ587C\",\"expiry\":1519505464,\"last_token\":\"$2a$10$r3GZrG8d5twdIOjj8h5n0ux2Tq6am8yS8FCbOINWH/rwU0Jh8ZoUa\",\"updated_at\":\"2018-02-10T15:51:04.813-05:00\"},\"s-0XFG94QV9r1g3FsInzCA\":{\"token\":\"$2a$10$r94RG1oZ/fb3w5qY5Rhie.ooYHO0Rhiw2VyZbOlzvRr.k22z28K7e\",\"expiry\":1519778220,\"last_token\":\"$2a$10$QzVRDaX.d0yObfrWhdv0wOelL0vIw/2cikUuBQ64yF03vkxZZDnC.\",\"updated_at\":\"2018-02-13T19:37:00.353-05:00\"},\"mKHhJvv3dUc8fhw_gzhyFQ\":{\"token\":\"$2a$10$z95X/Iorm1DLar1EV90c5uEIzheiKSNazugqalJG.h7QqdruGmp4m\",\"expiry\":1519778855,\"last_token\":\"$2a$10$6h8f8GKtt5JErphX6smemejy/dLTgZM1BeayHWgOdgpmjxFeRKs1i\",\"updated_at\":\"2018-02-13T19:47:35.292-05:00\"},\"4H6UwPjwbOe9-FeGhZ1G2w\":{\"token\":\"$2a$10$tYSajQyPt3cMbZIh/tqwreduT.pV6fA9AG0WRgP9nZJErWhro1E.q\",\"expiry\":1519778961,\"last_token\":\"$2a$10$gQ4tLASUD5TYAmLFEeDBkutAriw6UCBU3RN4cdpCb/yOh0lCkiva.\",\"updated_at\":\"2018-02-13T19:49:45.085-05:00\"},\"OTZSplVOybFtDjwxeEGMcg\":{\"token\":\"$2a$10$gA0MwrR96PF3BNZOAKih1utZQssCvbNPybSuF2/zJO.OJk6q4BSrS\",\"expiry\":1519783333,\"last_token\":\"$2a$10$49/VWRb.u/b/A1G8s3M8NeAeGgSacxZ2q.XkitOrs1ODJa0kb/1Cy\",\"updated_at\":\"2018-02-13T21:02:13.224-05:00\"},\"BVP89_FzDT_yH1BmWiqv6w\":{\"token\":\"$2a$10$l8.oNDKc9lMD949vFJfjMuG2XW2FJuAsOhTQkTI58J8GWLk3.CdrW\",\"expiry\":1519848550}}"], ["updated_at", "2018-02-14 20:09:10.972434"], ["id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.0ms)[0m  [1m[33mUPDATE "workers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["sign_in_count", 22], ["current_sign_in_at", "2018-02-14 20:09:11.005556"], ["last_sign_in_at", "2018-02-14 02:00:37.850860"], ["updated_at", "2018-02-14 20:09:11.011513"], ["id", 1]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (6.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE "workers" SET "tokens" = ?, "updated_at" = ? WHERE "workers"."id" = ?[0m  [["tokens", "{\"QsbjUoZxlQXq-RiQ7S5Olw\":{\"token\":\"$2a$10$5Yj.2rixmrVlPgGildKbPuCv17CktmmEFX0dToigdfxZ/GUOsz9Qi\",\"expiry\":1519336343,\"last_token\":\"$2a$10$rXUsBHsCElUtvnbi/k8sY.bvvrKmrIT.j7flRg0qi9AQRTaWj/Wj6\",\"updated_at\":\"2018-02-08T16:52:23.084-05:00\"},\"MHyGMidFeD-ehrUzeE6ryg\":{\"token\":\"$2a$10$fI/M4tXiw9ScUObIpqu6RecwQQAmCw9PKzx5ZLwUuYLYu49Wb0oLK\",\"expiry\":1519505175,\"last_token\":\"$2a$10$xSB9qEqTdJXtxbU0gx5xs.eU.ApjYEL5uvoKjxBcxf6Lm65mU018e\",\"updated_at\":\"2018-02-10T15:46:15.537-05:00\"},\"--9yDlQT1gEOS01QwD9FsQ\":{\"token\":\"$2a$10$GuNelKK0RbokfaiMXMN3Jek5uRfYJtE3ThMj5/8B8A3IXXfRexODO\",\"expiry\":1519505334,\"last_token\":\"$2a$10$zwE6WAp193Fx/785bwcsL.YBJIbB913Bpf66GveBKIYvhFktk2.s.\",\"updated_at\":\"2018-02-10T15:48:54.171-05:00\"},\"OVPOU2wDxLAZK3M2lyOXqQ\":{\"token\":\"$2a$10$IVYg/Wh7r1YXrM7yUBkXeeqSz8RSGvEjY2bazqkZ1zmKzKc9zNe7y\",\"expiry\":1519505393,\"last_token\":\"$2a$10$g45b.RhDytSU8JAfSAXnWeoWqRqM8EznIvQbgMyEEllVj9LDYiyPq\",\"updated_at\":\"2018-02-10T15:49:53.050-05:00\"},\"ZdYQqyW8vR3cKT8FSkJ2fQ\":{\"token\":\"$2a$10$ZilMAmkov.ASPbnKuevUJ.C1v26.u6t0YzNH9mMorQW899aJZ587C\",\"expiry\":1519505464,\"last_token\":\"$2a$10$r3GZrG8d5twdIOjj8h5n0ux2Tq6am8yS8FCbOINWH/rwU0Jh8ZoUa\",\"updated_at\":\"2018-02-10T15:51:04.813-05:00\"},\"s-0XFG94QV9r1g3FsInzCA\":{\"token\":\"$2a$10$r94RG1oZ/fb3w5qY5Rhie.ooYHO0Rhiw2VyZbOlzvRr.k22z28K7e\",\"expiry\":1519778220,\"last_token\":\"$2a$10$QzVRDaX.d0yObfrWhdv0wOelL0vIw/2cikUuBQ64yF03vkxZZDnC.\",\"updated_at\":\"2018-02-13T19:37:00.353-05:00\"},\"mKHhJvv3dUc8fhw_gzhyFQ\":{\"token\":\"$2a$10$z95X/Iorm1DLar1EV90c5uEIzheiKSNazugqalJG.h7QqdruGmp4m\",\"expiry\":1519778855,\"last_token\":\"$2a$10$6h8f8GKtt5JErphX6smemejy/dLTgZM1BeayHWgOdgpmjxFeRKs1i\",\"updated_at\":\"2018-02-13T19:47:35.292-05:00\"},\"4H6UwPjwbOe9-FeGhZ1G2w\":{\"token\":\"$2a$10$tYSajQyPt3cMbZIh/tqwreduT.pV6fA9AG0WRgP9nZJErWhro1E.q\",\"expiry\":1519778961,\"last_token\":\"$2a$10$gQ4tLASUD5TYAmLFEeDBkutAriw6UCBU3RN4cdpCb/yOh0lCkiva.\",\"updated_at\":\"2018-02-13T19:49:45.085-05:00\"},\"OTZSplVOybFtDjwxeEGMcg\":{\"token\":\"$2a$10$gA0MwrR96PF3BNZOAKih1utZQssCvbNPybSuF2/zJO.OJk6q4BSrS\",\"expiry\":1519783333,\"last_token\":\"$2a$10$49/VWRb.u/b/A1G8s3M8NeAeGgSacxZ2q.XkitOrs1ODJa0kb/1Cy\",\"updated_at\":\"2018-02-13T21:02:13.224-05:00\"},\"BVP89_FzDT_yH1BmWiqv6w\":{\"token\":\"$2a$10$Z8GDqj7385/NWP5DmyzP6./.D1y18fYjBJLe6c4RijBAhldeL3Luq\",\"expiry\":1519848551,\"last_token\":\"$2a$10$l8.oNDKc9lMD949vFJfjMuG2XW2FJuAsOhTQkTI58J8GWLk3.CdrW\",\"updated_at\":\"2018-02-14T15:09:11.236-05:00\"}}"], ["updated_at", "2018-02-14 20:09:11.238114"], ["id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 12068ms (Views: 0.7ms | ActiveRecord: 113.2ms)
+
+
+Started POST "/customer_auth/password" for 127.0.0.1 at 2018-02-14 15:17:04 -0500
+Processing by DeviseTokenAuth::PasswordsController#create as */*
+  Parameters: {"email"=>"customer@gmail.com"}
+  [1m[36mCustomer Load (1.9ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (uid = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."reset_password_token" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["reset_password_token", "49f74c6674ebc01690ee943293eac738d73ec0187f1c6729dc5a95b99feee5fd"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.0ms)[0m  [1m[33mUPDATE "customers" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["reset_password_token", "49f74c6674ebc01690ee943293eac738d73ec0187f1c6729dc5a95b99feee5fd"], ["reset_password_sent_at", "2018-02-14 20:17:05.351544"], ["updated_at", "2018-02-14 20:17:05.354671"], ["id", 1]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/reset_password_instructions.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/reset_password_instructions.html.erb (34.1ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 1984.3ms
+Sent mail to customer@gmail.com (2078.5ms)
+Date: Wed, 14 Feb 2018 15:17:08 -0500
+From: tangxingbang@gmail.com
+Reply-To: tangxingbang@gmail.com
+To: customer@gmail.com
+Message-ID: <5a8499446b5cc_11803bdfd2c2667@DESKTOP-LQIU2VG.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+email: customer@gmail.com
+provider: email
+redirect-url: confirmed
+client-config: default
+
+<p>Hello world customer@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/customer_auth/password/edit?config=default&redirect_url=confirmed&reset_password_token=TpC6FF-AHPzpBoEx1-2J">Change my password</a></p>
+
+<p>If you didn&#39;t request this, please ignore this email.</p>
+<p>Your password won&#39;t change until you access the link above and create a new one.</p>
+Completed 200 OK in 5698ms (Views: 1.1ms | ActiveRecord: 37.1ms)
+
+
+Started OPTIONS "/cusauth/sign_in" for 127.0.0.1 at 2018-02-14 15:28:49 -0500
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/cusauth/sign_in"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/cusauth/sign_in" for 127.0.0.1 at 2018-02-14 15:28:51 -0500
+  
+Started OPTIONS "/cusauth/sign_in" for 127.0.0.1 at 2018-02-14 15:28:52 -0500
+ActionController::RoutingError (No route matches [OPTIONS] "/cusauth/sign_in"):
+Started OPTIONS "/cusauth/sign_in" for 127.0.0.1 at 2018-02-14 15:28:53 -0500
+Started OPTIONS "/cusauth/sign_in" for 127.0.0.1 at 2018-02-14 15:28:53 -0500
+  
+  
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/cusauth/sign_in"):
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [OPTIONS] "/cusauth/sign_in"):
+ActionController::RoutingError (No route matches [OPTIONS] "/cusauth/sign_in"):
+  
+  
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" LIMIT ?[0m  [["LIMIT", 11]]
