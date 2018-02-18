@@ -47,4 +47,5 @@ DeviseTokenAuth.setup do |config|
   # config.enable_standard_devise_support = false
   config.default_confirm_success_url = "confirmed"
   config.default_password_reset_url = "confirmed"
+  config.change_headers_on_each_request = false
 end
