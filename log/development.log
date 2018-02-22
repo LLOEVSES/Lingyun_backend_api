@@ -6959,3 +6959,446 @@ Processing by DeviseTokenAuth::SessionsController#create as */*
 Completed 200 OK in 804ms (Views: 11.4ms | ActiveRecord: 121.1ms)
 
 
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_email' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventsDetails (20180222012003)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "accept_time" varchar DEFAULT NULL, "finished_time" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (16.2ms)[0m  [1m[32mINSERT INTO "aevents" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address","accept_time","finished_time")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address","accept_time","finished_time" FROM "events"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "accept_time" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "events" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address","accept_time")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address","accept_time" FROM "aevents"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "accept_time" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aevents" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address","accept_time")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address","accept_time" FROM "events"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL, "address" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "events" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address" FROM "aevents"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL, "address" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "aevents" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area","address" FROM "events"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "events" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area" FROM "aevents"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0, "area" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aevents" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type","area" FROM "events"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "events" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type" FROM "aevents"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0, "event_type" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "aevents" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status","event_type" FROM "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "events" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status" FROM "aevents"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "message" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aevents" ("id","message","location","customer_id","worker_id","created_at","updated_at","status")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status" FROM "events"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "message" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "events" ("id","message","location","customer_id","worker_id","created_at","updated_at","status")
+                     SELECT "id","message","location","customer_id","worker_id","created_at","updated_at","status" FROM "aevents"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180222012003"]]
+  [1m[35m (35.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_email' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_email' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventsDetails (20180222012003)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aevents_on_customer_id_and_worker_id" ON "aevents" ("customer_id", "worker_id")[0m
+  [1m[35m (10.2ms)[0m  [1m[32mINSERT INTO "aevents" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status")
+                     SELECT "id","message","location","customer_id","worker_id","created_at","updated_at","status" FROM "events"[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "customer_id" integer DEFAULT NULL, "worker_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aevents_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_customer_id_and_worker_id" ON "events" ("customer_id", "worker_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "events" ("id","detail","location","customer_id","worker_id","created_at","updated_at","status")
+                     SELECT "id","detail","location","customer_id","worker_id","created_at","updated_at","status" FROM "aevents"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "events" ADD "event_type" integer DEFAULT 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "events" ADD "area" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "events" ADD "address" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "events" ADD "accept_time" varchar[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "events" ADD "finished_time" varchar[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "events" ADD "free_time" varchar[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180222012003"]]
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_customers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_customers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_customer_id_and_worker_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workers_on_email' AND type='index'
+[0m

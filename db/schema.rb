@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180222012003) do
     t.string "address"
     t.string "accept_time"
     t.string "finished_time"
+    t.string "free_time"
     t.index ["customer_id", "worker_id"], name: "index_events_on_customer_id_and_worker_id"
   end
 

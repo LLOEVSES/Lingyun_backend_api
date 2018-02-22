@@ -6,5 +6,6 @@ class AddEventsDetails < ActiveRecord::Migration[5.1]
     add_column :events, :address, :string
     add_column :events, :accept_time, :string
     add_column :events, :finished_time, :string
+    add_column :events, :free_time, :string
   end
 end
