@@ -26,9 +26,14 @@ class V1::EventsController < ApplicationController
     def accepted
         if current_worker.events.exists?(params[:id])
             event =  current_worker.events.find(params[:id])
-            event.status = "accepted"
-            event.save
-            render json: "You have accepted event"
+            if event.status == "searching"
+                event.status = "accepted"
+                event.accepted_time = event.updated_at
+                event.save
+                render json: "You have accepted event"
+            else
+                render json: "Event has aready been accepted"
+            end
         else
             render json: "Cannot find this event"
         end

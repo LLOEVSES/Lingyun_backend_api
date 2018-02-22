@@ -25,6 +25,7 @@ class V1::WorkersController < ApplicationController
       if current_worker.events.exists?(params[:id])
         event = current_worker.events.find(params[:id])
         event.status = "finished"
+        event.finished_time = event.updated_at
         event.save
         render json: "event finished"
       else

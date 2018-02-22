@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213205406) do
+ActiveRecord::Schema.define(version: 20180222012003) do
 
   create_table "customers", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -45,13 +45,18 @@ ActiveRecord::Schema.define(version: 20180213205406) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "message"
+    t.string "detail"
     t.string "location"
     t.integer "customer_id"
     t.integer "worker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
+    t.integer "type", default: 0
+    t.string "area"
+    t.string "address"
+    t.string "accept_time"
+    t.string "finished_time"
     t.index ["customer_id", "worker_id"], name: "index_events_on_customer_id_and_worker_id"
   end
 
