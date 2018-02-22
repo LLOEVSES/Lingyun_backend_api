@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20180222012003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
-    t.integer "type", default: 0
+    t.integer "event_type", default: 0
     t.string "area"
     t.string "address"
     t.string "accept_time"
