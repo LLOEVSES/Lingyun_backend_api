@@ -11,7 +11,7 @@ class V1::CustomerEventsController < ApplicationController
 
     #customer create new event
     def create
-        event = Event.new(:detail => request.headers['detail'],:type => request.headers['type'],
+        event = Event.new(:detail => request.headers['detail'],:event_type => request.headers['event_type'],
                           :area => request.headers['area'], :address => request.headers['address'])
         event.customer_id = current_customer.id
         #the first worker is empty worker means: searching worker
@@ -26,7 +26,7 @@ class V1::CustomerEventsController < ApplicationController
     #edit event infromation
     def update
         event = current_customer.events.find(params[:id])
-        if event.update(:detail => request.headers['detail'],:type => request.headers['type'],
+        if event.update(:detail => request.headers['detail'],:event_type => request.headers['event_type'],
                         :area => request.headers['area'], :address => request.headers['address'])
             render json: event
         else
