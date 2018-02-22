@@ -6,5 +6,5 @@ class Event < ApplicationRecord
     validates :detail, presence: true
 
     enum status: [:searching, :accepted, :processing, :finished, :cancelled]
-    enum event_type: [:water, :earth, :fire, :wind]
+    enum type: [:water, :earth, :fire, :wind]
 end
