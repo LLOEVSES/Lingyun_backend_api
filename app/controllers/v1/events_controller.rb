@@ -28,9 +28,13 @@ class V1::EventsController < ApplicationController
             event =  current_worker.events.find(params[:id])
             if event.status == "searching"
                 event.status = "accepted"
-                event.accepted_time = event.updated_at
-                event.save
-                render json: "You have accepted event"
+                event.accept_time = event.updated_at
+
+                if event.save
+                    render json: event
+                else
+                    render json: event.errors.messages
+                end
             else
                 render json: "Event has aready been accepted"
             end
@@ -47,7 +51,8 @@ class V1::EventsController < ApplicationController
                 event.save
                 render json: "Event is processing"
             else
-                render json: "Accept event first!"
+                #render json: "Accept event first!"
+                render json: event
             end
         else
             render json: "Cannot find this event"
