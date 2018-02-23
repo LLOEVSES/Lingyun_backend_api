@@ -13,15 +13,15 @@ class V1::CustomerEventsController < ApplicationController
 
     #customer create new event
     def create
-        event = Event.new(event_params)
-        event.customer_id = current_customer.id
-        #the first worker is empty worker means: searching worker
-        event.worker_id = 2
-        if event.save
-          render json: event
-        else
-          render json: event.errors.messages
-        end
+        # event = Event.new(event_params)
+        # event.customer_id = current_customer.id
+        # #the first worker is empty worker means: searching worker
+        # event.worker_id = 2
+        # if event.save
+        #   render json: event
+        # else
+        #   render json: event.errors.messages
+        # end
         render json: "200"
     end
 
