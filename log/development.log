@@ -7993,3 +7993,62 @@ Completed 200 OK in 14529ms (Views: 1.0ms | ActiveRecord: 118.6ms)
             FROM sqlite_temp_master
             WHERE name='index_workers_on_email' AND type='index'
 [0m
+Started POST "/customer_auth/sign_in" for 127.0.0.1 at 2018-02-23 16:37:14 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.4ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"LlKoQzmK7NnGAYWlhUtcaw\":{\"token\":\"$2a$10$zCeloL9GpRon2nAD1DjLk...INuBeZkZCSpbiAM06a1EAYcRAe7a.\",\"expiry\":1520474890},\"eaUf96Ip7-QbTqBtSkpBdw\":{\"token\":\"$2a$10$4LWFETIpfOZGcd3VtP.kTeYolVa4GoUo1/kESiHwkiZg0cwGihyoi\",\"expiry\":1520474982},\"NQBUfYgKlr5zcGgVhxETWQ\":{\"token\":\"$2a$10$pNjx.sceE/dY6f3XVbvj3uHQmTNr4WXCoIJnwr1NeXU02UWZFYuBK\",\"expiry\":1520475050},\"Yas-UnKslRiCy5PKiPhoKg\":{\"token\":\"$2a$10$UgBMdIVKwUhHUXUu6s8preYiPxScRN7O4B3jtVqA9NMp92VzmoPYS\",\"expiry\":1520475155},\"w4AGwUwk8jv24AaeQv31_w\":{\"token\":\"$2a$10$G3eYyyYTn7ycATzemf4PfuGmV/tGCMzeHBWIOF5GhiYfdUUH6iSgG\",\"expiry\":1520475609},\"rI8jl_nS3XBd_Mfmfj9twQ\":{\"token\":\"$2a$10$XqS/u/EEgt.qf5w2EtWmpe2lTZ/rU6ilSQzph.BeFAjEuyFPjVq9S\",\"expiry\":1520475634},\"fobRvEUfOwgeiLrpdaASwQ\":{\"token\":\"$2a$10$DSHMStXisa52bSLkVQNP5uOSxSHfm3DSQLoZ6mtWAUTjmckp1L35C\",\"expiry\":1520478489},\"EzeRaxRzBqTOxMyHt4vWBw\":{\"token\":\"$2a$10$j7bdoVtoztpc0yb2489z3.Ep17EB5e61BuFu1uyo0IIiNsHtfvK2y\",\"expiry\":1520479250},\"BNwQsr9XgWCV4uCr1R6Osg\":{\"token\":\"$2a$10$.1mfQmMI7Xews2b/aFvWFOsgkL4Tm7E0CzX7HBJzVDRB0as2tv.qW\",\"expiry\":1520561732},\"QpmLIQUSo1rbx3mQbwWLUw\":{\"token\":\"$2a$10$0zTUZ3eQhfrtrv8nTvauc.cZdy.Opd5rgDr57JgWhoTOUTwwUIfeu\",\"expiry\":1520630648},\"4P_OjuaUUwkEP16FFI1Qlg\":{\"token\":\"$2a$10$YueCMVY57IvjhwczqT07GeQPtWneGw8CQ/WArNuUL3XQO8z5SFyIq\",\"expiry\":1520631467}}"], ["updated_at", "2018-02-23 21:37:47.395192"], ["id", 1]]
+  [1m[35m (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 40], ["current_sign_in_at", "2018-02-23 21:37:47.497927"], ["last_sign_in_at", "2018-02-23 21:24:08.891322"], ["updated_at", "2018-02-23 21:37:47.521989"], ["id", 1]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"eaUf96Ip7-QbTqBtSkpBdw\":{\"token\":\"$2a$10$4LWFETIpfOZGcd3VtP.kTeYolVa4GoUo1/kESiHwkiZg0cwGihyoi\",\"expiry\":1520474982},\"NQBUfYgKlr5zcGgVhxETWQ\":{\"token\":\"$2a$10$pNjx.sceE/dY6f3XVbvj3uHQmTNr4WXCoIJnwr1NeXU02UWZFYuBK\",\"expiry\":1520475050},\"Yas-UnKslRiCy5PKiPhoKg\":{\"token\":\"$2a$10$UgBMdIVKwUhHUXUu6s8preYiPxScRN7O4B3jtVqA9NMp92VzmoPYS\",\"expiry\":1520475155},\"w4AGwUwk8jv24AaeQv31_w\":{\"token\":\"$2a$10$G3eYyyYTn7ycATzemf4PfuGmV/tGCMzeHBWIOF5GhiYfdUUH6iSgG\",\"expiry\":1520475609},\"rI8jl_nS3XBd_Mfmfj9twQ\":{\"token\":\"$2a$10$XqS/u/EEgt.qf5w2EtWmpe2lTZ/rU6ilSQzph.BeFAjEuyFPjVq9S\",\"expiry\":1520475634},\"fobRvEUfOwgeiLrpdaASwQ\":{\"token\":\"$2a$10$DSHMStXisa52bSLkVQNP5uOSxSHfm3DSQLoZ6mtWAUTjmckp1L35C\",\"expiry\":1520478489},\"EzeRaxRzBqTOxMyHt4vWBw\":{\"token\":\"$2a$10$j7bdoVtoztpc0yb2489z3.Ep17EB5e61BuFu1uyo0IIiNsHtfvK2y\",\"expiry\":1520479250},\"BNwQsr9XgWCV4uCr1R6Osg\":{\"token\":\"$2a$10$.1mfQmMI7Xews2b/aFvWFOsgkL4Tm7E0CzX7HBJzVDRB0as2tv.qW\",\"expiry\":1520561732},\"QpmLIQUSo1rbx3mQbwWLUw\":{\"token\":\"$2a$10$0zTUZ3eQhfrtrv8nTvauc.cZdy.Opd5rgDr57JgWhoTOUTwwUIfeu\",\"expiry\":1520630648},\"4P_OjuaUUwkEP16FFI1Qlg\":{\"token\":\"$2a$10$YueCMVY57IvjhwczqT07GeQPtWneGw8CQ/WArNuUL3XQO8z5SFyIq\",\"expiry\":1520631467}}"], ["updated_at", "2018-02-23 21:37:47.635792"], ["id", 1]]
+  [1m[35m (26.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 22239ms (Views: 2.0ms | ActiveRecord: 121.5ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-23 16:38:06 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Completed 400 Bad Request in 201ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/v1/customer_events_controller.rb:63:in `event_params'
+app/controllers/v1/customer_events_controller.rb:16:in `create'
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-23 16:39:03 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  Parameters: {"event"=>{"detail"=>"eeeevent"}}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.5ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "events" ("detail", "customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["detail", "eeeevent"], ["customer_id", 1], ["worker_id", 2], ["created_at", "2018-02-23 21:39:04.030601"], ["updated_at", "2018-02-23 21:39:04.030601"]]
+  [1m[35m (40.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 274ms (Views: 19.4ms | ActiveRecord: 49.7ms)
+
+
+Started POST "/customer_events" for 127.0.0.1 at 2018-02-23 16:39:20 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  Parameters: {"event"=>{"detail"=>"杀杀杀"}}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "events" ("detail", "customer_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["detail", "杀杀杀"], ["customer_id", 1], ["worker_id", 2], ["created_at", "2018-02-23 21:39:20.504627"], ["updated_at", "2018-02-23 21:39:20.504627"]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (5.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 157ms (Views: 1.7ms | ActiveRecord: 31.5ms)
+
+
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
