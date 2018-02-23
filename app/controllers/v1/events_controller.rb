@@ -74,16 +74,6 @@ class V1::EventsController < ApplicationController
     #
     # end
 
-    # def update
-    #   @event = Event.find(params[:id])
-    #   @event.worker_id = current_worker.id
-    #   if @event.update(event_params)
-    #     redirect_to @event
-    #   else
-    #     render json: @event.errors.messages
-    #   end
-    # end
-
     #worker finish event
     def destroy
 
@@ -97,8 +87,5 @@ class V1::EventsController < ApplicationController
       end
     end
 
-    private
-      def event_params
-        params.require(:event).permit(:message,:location)
-      end
+
 end

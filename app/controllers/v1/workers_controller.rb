@@ -14,7 +14,7 @@ class V1::WorkersController < ApplicationController
 
     # Change worker information
     def update
-      if current_worker.update(:name => request.headers[:name],:phone_number => request.headers[:phone_number], :area => request.headers[:area], :company => request.headers[:company])
+      if current_worker.update(worker_params)
         render json: current_worker
       else
         render json: current_worker.errors.messages
@@ -37,7 +37,7 @@ class V1::WorkersController < ApplicationController
 
     private
       def worker_params
-        params.require(:worker).permit(:name)
+        params.require(:worker).permit(:name ,:phone_number , :area , :company )
       end
 
 end

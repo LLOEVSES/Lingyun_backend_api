@@ -22,15 +22,13 @@ class V1::CustomerEventsController < ApplicationController
         else
           render json: event.errors.messages
         end
-        # render json: "200"
+
     end
 
     #edit event infromation
     def update
         event = current_customer.events.find(params[:id])
-        if event.update(:detail => request.headers['detail'],:event_type => request.headers['event_type'],
-                        :area => request.headers['area'], :address => request.headers['address'],
-                        :free_time => request.headers['free_time'])
+        if event.update(event_params)
             render json: event
         else
             render json: event.errors.messages
