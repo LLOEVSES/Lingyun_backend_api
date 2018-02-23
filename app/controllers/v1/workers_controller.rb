@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 class V1::WorkersController < ApplicationController
     before_action :authenticate_worker!
     #get current worker information

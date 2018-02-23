@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddDetails < ActiveRecord::Migration[5.1]
   def change
     #Add phone number

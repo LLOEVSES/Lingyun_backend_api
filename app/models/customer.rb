@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Customer < ApplicationRecord
   # Include default devise modules.
   devise :database_authenticatable, :registerable,

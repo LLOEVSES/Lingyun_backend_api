@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+#encoding: utf-8
 class V1::EventsController < ApplicationController
     #event action for workers
     before_action :authenticate_worker!#, except: [:index]

@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 class V1::CustomersController < ApplicationController
     before_action :authenticate_customer!
     #Show current customer

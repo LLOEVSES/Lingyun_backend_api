@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Worker < ApplicationRecord
   # Include default devise modules.
   devise :database_authenticatable, :registerable,

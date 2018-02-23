@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddEventsDetails < ActiveRecord::Migration[5.1]
   def change
     rename_column :events, :message, :detail

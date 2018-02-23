@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 class V1::CustomerEventsController < ApplicationController
     before_action :authenticate_customer!
     #get customer_events
