@@ -13,17 +13,15 @@ class V1::CustomerEventsController < ApplicationController
 
     #customer create new event
     def create
-        # event = Event.new(:detail => request.headers['detail'],:event_type => request.headers['event_type'],
-        #                   :area => request.headers['area'], :address => request.headers['address'],
-        #                   :free_time => request.headers['free_time'])
-        # event.customer_id = current_customer.id
-        # #the first worker is empty worker means: searching worker
-        # event.worker_id = 2
-        # if event.save
-        #   render json: event
-        # else
-        #   render json: event.errors.messages
-        # end
+        event = Event.new(event_params)
+        event.customer_id = current_customer.id
+        #the first worker is empty worker means: searching worker
+        event.worker_id = 2
+        if event.save
+          render json: event
+        else
+          render json: event.errors.messages
+        end
         render json: "200"
     end
 
@@ -62,7 +60,7 @@ class V1::CustomerEventsController < ApplicationController
 
     private
       def  event_params
-        #params.require(:event).permit(:message, :location)
-        #params.permit(:message, :location)
+        params.require(:event).permit(:detail, :event_type, :area, :address, :free_time)
+
       end
 end
