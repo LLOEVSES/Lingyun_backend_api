@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 
 class V1::CustomerEventsController < ApplicationController
-    before_action :authenticate_customer!
+    #before_action :authenticate_customer!
     #get customer_events
     def index
         render json: current_customer.events
