@@ -16,7 +16,6 @@ class V1::CustomerEventsController < ApplicationController
         event = Event.new(event_params)
         event.customer_id = current_customer.id
         #the first worker is empty worker means: searching worker
-        event.worker_id = 1
         if event.save
           render json: event
         else

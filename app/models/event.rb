@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Event < ApplicationRecord
     belongs_to :customer
-    belongs_to :worker
+    belongs_to :worker, optional: true
 
 
 
