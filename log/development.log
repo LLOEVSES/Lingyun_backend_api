@@ -8254,3 +8254,35 @@ Completed 200 OK in 98ms (Views: 3.5ms | ActiveRecord: 24.5ms)
   [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/customer_events" for 127.0.0.1 at 2018-03-01 18:23:49 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  Parameters: {"event"=>{"detail"=>"杀杀杀"}}
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (C:/Sites/backend_api/app/models/event.rb:9: syntax error, unexpected ':', expecting ']'
+...请选择需要维修种类，:排水,:电气,:土建,:油...
+...                               ^
+C:/Sites/backend_api/app/models/event.rb:9: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...维修种类，:排水,:电气,:土建,:油漆,:门窗,:其...
+...                               ^):
+  
+app/models/event.rb:9: syntax error, unexpected ':', expecting ']'
+app/models/event.rb:9: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/controllers/v1/customer_events_controller.rb:16:in `create'
+Started POST "/customer_events" for 127.0.0.1 at 2018-03-01 18:26:08 -0500
+Processing by V1::CustomerEventsController#create as JSON
+  Parameters: {"event"=>{"detail"=>"杀杀杀"}}
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "events" ("detail", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "杀杀杀"], ["customer_id", 1], ["created_at", "2018-03-01 23:26:08.609709"], ["updated_at", "2018-03-01 23:26:08.609709"]]
+  [1m[35m (31.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 207ms (Views: 3.6ms | ActiveRecord: 38.6ms)
+
+
