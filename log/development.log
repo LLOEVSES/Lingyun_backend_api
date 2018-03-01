@@ -8052,3 +8052,199 @@ Completed 200 OK in 157ms (Views: 1.7ms | ActiveRecord: 31.5ms)
 
 
   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.1ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = ?, "event_type" = ? WHERE "events"."id" = ?[0m  [["updated_at", "2018-02-26 20:05:21.460727"], ["event_type", 1], ["id", 1]]
+  [1m[35m (29.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/customer_auth/sign_in" for 127.0.0.1 at 2018-03-01 17:51:41 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"eaUf96Ip7-QbTqBtSkpBdw\":{\"token\":\"$2a$10$4LWFETIpfOZGcd3VtP.kTeYolVa4GoUo1/kESiHwkiZg0cwGihyoi\",\"expiry\":1520474982},\"NQBUfYgKlr5zcGgVhxETWQ\":{\"token\":\"$2a$10$pNjx.sceE/dY6f3XVbvj3uHQmTNr4WXCoIJnwr1NeXU02UWZFYuBK\",\"expiry\":1520475050},\"Yas-UnKslRiCy5PKiPhoKg\":{\"token\":\"$2a$10$UgBMdIVKwUhHUXUu6s8preYiPxScRN7O4B3jtVqA9NMp92VzmoPYS\",\"expiry\":1520475155},\"w4AGwUwk8jv24AaeQv31_w\":{\"token\":\"$2a$10$G3eYyyYTn7ycATzemf4PfuGmV/tGCMzeHBWIOF5GhiYfdUUH6iSgG\",\"expiry\":1520475609},\"rI8jl_nS3XBd_Mfmfj9twQ\":{\"token\":\"$2a$10$XqS/u/EEgt.qf5w2EtWmpe2lTZ/rU6ilSQzph.BeFAjEuyFPjVq9S\",\"expiry\":1520475634},\"fobRvEUfOwgeiLrpdaASwQ\":{\"token\":\"$2a$10$DSHMStXisa52bSLkVQNP5uOSxSHfm3DSQLoZ6mtWAUTjmckp1L35C\",\"expiry\":1520478489},\"EzeRaxRzBqTOxMyHt4vWBw\":{\"token\":\"$2a$10$j7bdoVtoztpc0yb2489z3.Ep17EB5e61BuFu1uyo0IIiNsHtfvK2y\",\"expiry\":1520479250},\"BNwQsr9XgWCV4uCr1R6Osg\":{\"token\":\"$2a$10$.1mfQmMI7Xews2b/aFvWFOsgkL4Tm7E0CzX7HBJzVDRB0as2tv.qW\",\"expiry\":1520561732},\"QpmLIQUSo1rbx3mQbwWLUw\":{\"token\":\"$2a$10$0zTUZ3eQhfrtrv8nTvauc.cZdy.Opd5rgDr57JgWhoTOUTwwUIfeu\",\"expiry\":1520630648},\"4P_OjuaUUwkEP16FFI1Qlg\":{\"token\":\"$2a$10$YueCMVY57IvjhwczqT07GeQPtWneGw8CQ/WArNuUL3XQO8z5SFyIq\",\"expiry\":1520631467},\"AWTmcUX8KHeheqvSKfiU7Q\":{\"token\":\"$2a$10$XRwrPVbnKopzxzuCo820f.IxN1FND0zADZ9Sa9MPg4fJ6bXhezTV.\",\"expiry\":1521150713}}"], ["updated_at", "2018-03-01 22:51:53.032382"], ["id", 1]]
+  [1m[35m (33.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 41], ["current_sign_in_at", "2018-03-01 22:51:53.076324"], ["last_sign_in_at", "2018-02-23 21:37:47.497927"], ["updated_at", "2018-03-01 22:51:53.079329"], ["id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"NQBUfYgKlr5zcGgVhxETWQ\":{\"token\":\"$2a$10$pNjx.sceE/dY6f3XVbvj3uHQmTNr4WXCoIJnwr1NeXU02UWZFYuBK\",\"expiry\":1520475050},\"Yas-UnKslRiCy5PKiPhoKg\":{\"token\":\"$2a$10$UgBMdIVKwUhHUXUu6s8preYiPxScRN7O4B3jtVqA9NMp92VzmoPYS\",\"expiry\":1520475155},\"w4AGwUwk8jv24AaeQv31_w\":{\"token\":\"$2a$10$G3eYyyYTn7ycATzemf4PfuGmV/tGCMzeHBWIOF5GhiYfdUUH6iSgG\",\"expiry\":1520475609},\"rI8jl_nS3XBd_Mfmfj9twQ\":{\"token\":\"$2a$10$XqS/u/EEgt.qf5w2EtWmpe2lTZ/rU6ilSQzph.BeFAjEuyFPjVq9S\",\"expiry\":1520475634},\"fobRvEUfOwgeiLrpdaASwQ\":{\"token\":\"$2a$10$DSHMStXisa52bSLkVQNP5uOSxSHfm3DSQLoZ6mtWAUTjmckp1L35C\",\"expiry\":1520478489},\"EzeRaxRzBqTOxMyHt4vWBw\":{\"token\":\"$2a$10$j7bdoVtoztpc0yb2489z3.Ep17EB5e61BuFu1uyo0IIiNsHtfvK2y\",\"expiry\":1520479250},\"BNwQsr9XgWCV4uCr1R6Osg\":{\"token\":\"$2a$10$.1mfQmMI7Xews2b/aFvWFOsgkL4Tm7E0CzX7HBJzVDRB0as2tv.qW\",\"expiry\":1520561732},\"QpmLIQUSo1rbx3mQbwWLUw\":{\"token\":\"$2a$10$0zTUZ3eQhfrtrv8nTvauc.cZdy.Opd5rgDr57JgWhoTOUTwwUIfeu\",\"expiry\":1520630648},\"4P_OjuaUUwkEP16FFI1Qlg\":{\"token\":\"$2a$10$YueCMVY57IvjhwczqT07GeQPtWneGw8CQ/WArNuUL3XQO8z5SFyIq\",\"expiry\":1520631467},\"AWTmcUX8KHeheqvSKfiU7Q\":{\"token\":\"$2a$10$XRwrPVbnKopzxzuCo820f.IxN1FND0zADZ9Sa9MPg4fJ6bXhezTV.\",\"expiry\":1521150713}}"], ["updated_at", "2018-03-01 22:51:53.113437"], ["id", 1]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 10625ms (Views: 0.5ms | ActiveRecord: 75.5ms)
+
+
+Started GET "/customer_events" for 127.0.0.1 at 2018-03-01 17:53:32 -0500
+Processing by V1::CustomerEventsController#index as JSON
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_customer! rendered or redirected
+Completed 401 Unauthorized in 179ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/customer_auth/sign_in" for 127.0.0.1 at 2018-03-01 17:53:36 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (email = 'customer@gmail.com' AND provider='email') ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"NQBUfYgKlr5zcGgVhxETWQ\":{\"token\":\"$2a$10$pNjx.sceE/dY6f3XVbvj3uHQmTNr4WXCoIJnwr1NeXU02UWZFYuBK\",\"expiry\":1520475050},\"Yas-UnKslRiCy5PKiPhoKg\":{\"token\":\"$2a$10$UgBMdIVKwUhHUXUu6s8preYiPxScRN7O4B3jtVqA9NMp92VzmoPYS\",\"expiry\":1520475155},\"w4AGwUwk8jv24AaeQv31_w\":{\"token\":\"$2a$10$G3eYyyYTn7ycATzemf4PfuGmV/tGCMzeHBWIOF5GhiYfdUUH6iSgG\",\"expiry\":1520475609},\"rI8jl_nS3XBd_Mfmfj9twQ\":{\"token\":\"$2a$10$XqS/u/EEgt.qf5w2EtWmpe2lTZ/rU6ilSQzph.BeFAjEuyFPjVq9S\",\"expiry\":1520475634},\"fobRvEUfOwgeiLrpdaASwQ\":{\"token\":\"$2a$10$DSHMStXisa52bSLkVQNP5uOSxSHfm3DSQLoZ6mtWAUTjmckp1L35C\",\"expiry\":1520478489},\"EzeRaxRzBqTOxMyHt4vWBw\":{\"token\":\"$2a$10$j7bdoVtoztpc0yb2489z3.Ep17EB5e61BuFu1uyo0IIiNsHtfvK2y\",\"expiry\":1520479250},\"BNwQsr9XgWCV4uCr1R6Osg\":{\"token\":\"$2a$10$.1mfQmMI7Xews2b/aFvWFOsgkL4Tm7E0CzX7HBJzVDRB0as2tv.qW\",\"expiry\":1520561732},\"QpmLIQUSo1rbx3mQbwWLUw\":{\"token\":\"$2a$10$0zTUZ3eQhfrtrv8nTvauc.cZdy.Opd5rgDr57JgWhoTOUTwwUIfeu\",\"expiry\":1520630648},\"4P_OjuaUUwkEP16FFI1Qlg\":{\"token\":\"$2a$10$YueCMVY57IvjhwczqT07GeQPtWneGw8CQ/WArNuUL3XQO8z5SFyIq\",\"expiry\":1520631467},\"AWTmcUX8KHeheqvSKfiU7Q\":{\"token\":\"$2a$10$XRwrPVbnKopzxzuCo820f.IxN1FND0zADZ9Sa9MPg4fJ6bXhezTV.\",\"expiry\":1521150713},\"YVpocJJyco40DkEQm99Ifg\":{\"token\":\"$2a$10$Sg/DDxVGkWvBBt.AeNW.EeTOmxlpbRlYo8eNBFiCL6nOxiE5tHkMC\",\"expiry\":1521150816}}"], ["updated_at", "2018-03-01 22:53:36.362028"], ["id", 1]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "customers" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["sign_in_count", 42], ["current_sign_in_at", "2018-03-01 22:53:36.396105"], ["last_sign_in_at", "2018-03-01 22:51:53.076324"], ["updated_at", "2018-03-01 22:53:36.399112"], ["id", 1]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "customers" SET "tokens" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["tokens", "{\"Yas-UnKslRiCy5PKiPhoKg\":{\"token\":\"$2a$10$UgBMdIVKwUhHUXUu6s8preYiPxScRN7O4B3jtVqA9NMp92VzmoPYS\",\"expiry\":1520475155},\"w4AGwUwk8jv24AaeQv31_w\":{\"token\":\"$2a$10$G3eYyyYTn7ycATzemf4PfuGmV/tGCMzeHBWIOF5GhiYfdUUH6iSgG\",\"expiry\":1520475609},\"rI8jl_nS3XBd_Mfmfj9twQ\":{\"token\":\"$2a$10$XqS/u/EEgt.qf5w2EtWmpe2lTZ/rU6ilSQzph.BeFAjEuyFPjVq9S\",\"expiry\":1520475634},\"fobRvEUfOwgeiLrpdaASwQ\":{\"token\":\"$2a$10$DSHMStXisa52bSLkVQNP5uOSxSHfm3DSQLoZ6mtWAUTjmckp1L35C\",\"expiry\":1520478489},\"EzeRaxRzBqTOxMyHt4vWBw\":{\"token\":\"$2a$10$j7bdoVtoztpc0yb2489z3.Ep17EB5e61BuFu1uyo0IIiNsHtfvK2y\",\"expiry\":1520479250},\"BNwQsr9XgWCV4uCr1R6Osg\":{\"token\":\"$2a$10$.1mfQmMI7Xews2b/aFvWFOsgkL4Tm7E0CzX7HBJzVDRB0as2tv.qW\",\"expiry\":1520561732},\"QpmLIQUSo1rbx3mQbwWLUw\":{\"token\":\"$2a$10$0zTUZ3eQhfrtrv8nTvauc.cZdy.Opd5rgDr57JgWhoTOUTwwUIfeu\",\"expiry\":1520630648},\"4P_OjuaUUwkEP16FFI1Qlg\":{\"token\":\"$2a$10$YueCMVY57IvjhwczqT07GeQPtWneGw8CQ/WArNuUL3XQO8z5SFyIq\",\"expiry\":1520631467},\"AWTmcUX8KHeheqvSKfiU7Q\":{\"token\":\"$2a$10$XRwrPVbnKopzxzuCo820f.IxN1FND0zADZ9Sa9MPg4fJ6bXhezTV.\",\"expiry\":1521150713},\"YVpocJJyco40DkEQm99Ifg\":{\"token\":\"$2a$10$Sg/DDxVGkWvBBt.AeNW.EeTOmxlpbRlYo8eNBFiCL6nOxiE5tHkMC\",\"expiry\":1521150816}}"], ["updated_at", "2018-03-01 22:53:36.432202"], ["id", 1]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 341ms (Views: 0.5ms | ActiveRecord: 56.4ms)
+
+
+Started GET "/customer_events" for 127.0.0.1 at 2018-03-01 17:53:39 -0500
+Processing by V1::CustomerEventsController#index as JSON
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."customer_id" = ?[0m  [["customer_id", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 222ms (Views: 60.8ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/customers/update/5" for 127.0.0.1 at 2018-03-01 17:54:16 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/customers/update/5"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/customer_events/update/5" for 127.0.0.1 at 2018-03-01 17:54:44 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/customer_events/update/5"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/customer_events/5" for 127.0.0.1 at 2018-03-01 17:55:44 -0500
+Processing by V1::CustomerEventsController#update as JSON
+  Parameters: {"event"=>{"event_type"=>"排水"}, "id"=>"5"}
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."customer_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["customer_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (0.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 67ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/customer_events/5" for 127.0.0.1 at 2018-03-01 17:56:56 -0500
+Processing by V1::CustomerEventsController#update as JSON
+  Parameters: {"event"=>{"event_type"=>"q"}, "id"=>"5"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (C:/Sites/backend_api/app/models/event.rb:9: syntax error, unexpected ':', expecting ']'
+...e: [:排水, :电气, :土建 :油漆,:门窗,:其他]
+...                               ^
+C:/Sites/backend_api/app/models/event.rb:9: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...电气, :土建 :油漆,:门窗,:其他]
+...                                ^):
+  
+app/models/event.rb:9: syntax error, unexpected ':', expecting ']'
+app/models/event.rb:9: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/controllers/v1/customer_events_controller.rb:30:in `update'
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Started PATCH "/customer_events/5" for 127.0.0.1 at 2018-03-01 17:58:09 -0500
+Processing by V1::CustomerEventsController#update as JSON
+  Parameters: {"event"=>{"event_type"=>"q"}, "id"=>"5"}
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."customer_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["customer_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 3.0ms)
+
+
+  
+ArgumentError ('q' is not a valid event_type):
+  
+app/controllers/v1/customer_events_controller.rb:31:in `update'
+Started PATCH "/customer_events/5" for 127.0.0.1 at 2018-03-01 17:58:25 -0500
+Processing by V1::CustomerEventsController#update as JSON
+  Parameters: {"event"=>{"event_type"=>"其他\n"}, "id"=>"5"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."customer_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["customer_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError ('其他
+' is not a valid event_type):
+  
+app/controllers/v1/customer_events_controller.rb:31:in `update'
+Started PATCH "/customer_events/5" for 127.0.0.1 at 2018-03-01 17:58:44 -0500
+Processing by V1::CustomerEventsController#update as JSON
+  Parameters: {"event"=>{"event_type"=>"其他"}, "id"=>"5"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."uid" = ? LIMIT ?[0m  [["uid", "customer@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."customer_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["customer_id", 1], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" WHERE "workers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "events" SET "event_type" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["event_type", 5], ["updated_at", "2018-03-01 22:58:44.405707"], ["id", 5]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 98ms (Views: 3.5ms | ActiveRecord: 24.5ms)
+
+
