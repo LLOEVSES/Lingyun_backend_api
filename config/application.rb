@@ -25,7 +25,7 @@ module LingyunServerV2
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :delete, :put, :patch, :options]，
+        resource '*', :headers => :any, :methods => [:get, :post, :delete, :put, :patch, :options],
                       :expose  => ['Access-Token', 'Expiry', 'Token-Type', 'Uid', 'Client']
       end
     end
