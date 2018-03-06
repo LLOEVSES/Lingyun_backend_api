@@ -2,6 +2,7 @@
 
 class V1::CustomerEventsController < ApplicationController
     before_action :authenticate_customer!
+    before_action :set_cors
     #get customer_events
     def index
         render json: current_customer.events
@@ -58,5 +59,10 @@ class V1::CustomerEventsController < ApplicationController
     private
       def event_params
         params.require(:event).permit(:detail, :event_type, :area, :address, :free_time)
+      end
+
+      def set_cors
+        headers['Access-Control-Allow-Origin'] = '*'
+        headers['Access-Control-Request-Method'] = '*'
       end
 end

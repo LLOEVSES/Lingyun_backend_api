@@ -12,13 +12,20 @@ module LingyunServerV2
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    config.middleware.use Rack::Cors do
+    # config.middleware.use Rack::Cors do
+    #   allow do
+    #     origins '*'
+    #     resource '*',
+    #       :headers => :any,
+    #       :expose  => ['Access-Token', 'Expiry', 'Token-Type', 'Uid', 'Client'],
+    #       :methods => [:get, :post, :options, :delete, :put]
+    #   end
+    # end
+
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*',
-          :headers => :any,
-          :expose  => ['Access-Token', 'Expiry', 'Token-Type', 'Uid', 'Client'],
-          :methods => [:get, :post, :options, :delete, :put]
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
 
