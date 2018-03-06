@@ -26,7 +26,7 @@ module LingyunServerV2
       allow do
         origins '*'
         resource '*', :headers => :any, :methods => [:get, :post, :delete, :put, :patch, :options],
-                      :expose  => ['access-Token', 'expiry', 'token-Type', 'uid', 'client']
+                      :expose  => ['Access-Token', 'Expiry', 'Token-Type', 'Uid', 'Client']
       end
     end
 
