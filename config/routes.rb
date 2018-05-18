@@ -25,6 +25,14 @@ Rails.application.routes.draw do
           end
           resources :workers
           resources :customer_events
+          resources :admins do
+            collection do
+              get 'workers'
+              get 'customers'
+              get 'events'
+            end
+          end
+
           #resources :customers_tokens, :only => [:create, :destroy]
 
       end
